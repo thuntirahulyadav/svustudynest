@@ -94,7 +94,7 @@ function checkAuthentication() {
 - Responsive design for mobile and desktop
 
 ## Getting Started
-1. Ensure the backend server is running (`backend.py`)
+1. Ensure the backend server is running (`app.py`)
 2. Open `index.html` in a web browser
 3. Login with valid student credentials
 4. Navigate through the educational content

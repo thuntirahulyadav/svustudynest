@@ -1,4 +1,4 @@
-# SVUSTUDYNEST - Authentication System
+# SVUSTUDYNEST - WHERE YOU ALL STUDY REASOURCE AT ONE PLACE
 
 ## Overview
 SVUSTUDYNEST is a comprehensive study hub for Sri Venkateswara University students. The application now includes a robust authentication system that ensures only logged-in users can access the educational content.

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVUSTUDYNEST - Welcome</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Montserrat', sans-serif; }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-indigo-100 via-white to-indigo-300 min-h-screen flex flex-col items-center justify-center">
+  <div class="text-center">
+    <h1 class="text-4xl md:text-6xl font-extrabold text-indigo-800 mb-4">SVUSTUDYNEST</h1>
+    <p class="text-xl text-gray-600 mb-8">Sri Venkateswara University Study Nest</p>
+    <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto"></div>
+    <p class="text-gray-500 mt-4">Loading...</p>
+  </div>
+
+  <script>
+    // Check authentication status and redirect accordingly
+    async function checkAndRedirect() {
+      try {
+        const response = await fetch('/check-auth', {
+          method: 'GET',
+          credentials: 'include'
+        });
+        
+        if (response.ok) {
+          const data = await response.json();
+          if (data.authenticated) {
+            // User is logged in, redirect to dashboard
+            window.location.href = '/dashboard.html';
+            return;
+          }
+        }
+        
+        // User is not logged in, redirect to login
+        window.location.href = '/login.html';
+      } catch (error) {
+        console.error('Authentication check failed:', error);
+        // On error, redirect to login
+        window.location.href = '/login.html';
+      }
+    }
+    
+    // Add a small delay to show the loading screen
+    setTimeout(checkAndRedirect, 1500);
+  </script>
+</body>
+</html> 

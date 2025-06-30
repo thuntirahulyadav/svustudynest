@@ -1,103 +1,116 @@
-# SVUSTUDYNEST - ALL STUDY REASOURCE AT ONE PLACE
+# SVUSTUDYNEST
 
-## Overview
-SVUSTUDYNEST is a comprehensive study hub for Sri Venkateswara University students. The application now includes a robust authentication system that ensures only logged-in users can access the educational content.
+A comprehensive study hub and authentication system for Sri Venkateswara University students. This platform provides secure login, subject resources, and an integrated AI chatbot for academic support.
 
-## Authentication Features
+---
 
-### 🔐 Secure Login System
-- **Session Management**: 24-hour session duration with automatic expiration
-- **Persistent Login**: Users stay logged in across browser sessions until session expires
-- **Automatic Redirects**: Users are automatically redirected to appropriate pages based on authentication status
+## 🚀 Features
 
-### 🛡️ Security Measures
-- **Multi-factor Authentication Check**: Validates student name, roll number, login time, and authentication status
-- **Periodic Validation**: Authentication is checked every 5 minutes to ensure session validity
-- **Automatic Logout**: Sessions expire after 24 hours or when user clicks logout
-- **Storage Cleanup**: All authentication data is cleared on logout or session expiration
+- **Secure Login & Session Management** (Flask backend, SQLite)
+- **Role-based Access** (Student/Admin)
+- **Real-time Login Activity Export** (Excel)
+- **Protected Educational Content** (Multiple subjects, units, PDFs, videos)
+- **Integrated AI Chatbot** (OpenRouter API)
+- **Modern UI** (Tailwind CSS, responsive design)
 
-### 🚪 Access Control
-- **Protected Pages**: All educational content pages require authentication
-- **Login Required**: Users must log in before accessing any content
-- **Seamless Navigation**: Authenticated users can navigate freely between pages
+---
 
-## File Structure
+## 📁 File & Folder Structure
 
-### Core Files
-- `index.html` - Entry point that redirects based on authentication status
-- `login.html` - Login page with enhanced session management
-- `auth.js` - Common authentication script used by all protected pages
-- `dashboard.html` - Main dashboard (requires authentication)
-- `semester4.html` - Semester 4 subjects page (requires authentication)
-- `os.html` - Operating System subject page (requires authentication)
-- `os_unit1.html` - Unit 1 content page (requires authentication)
-
-### Authentication Flow
-1. **Entry Point**: `index.html` checks authentication and redirects accordingly
-2. **Login**: `login.html` handles user authentication and stores session data
-3. **Protected Pages**: All content pages include `auth.js` for authentication checks
-4. **Logout**: Users can logout from any page, clearing all session data
-
-## How to Use
-
-### For Students
-1. **Access**: Navigate to the application (starts at `index.html`)
-2. **Login**: Enter your roll number and password
-3. **Browse**: Access all educational content freely
-4. **Logout**: Click the logout button when finished
-
-### For Developers
-1. **Add New Pages**: Include `auth.js` script in any new HTML page
-2. **Add Logout Button**: Include `<button id="logoutBtn">Logout</button>` in the navbar
-3. **Add Student Name Display**: Include `<span id="studentName"></span>` in the navbar
-
-## Technical Implementation
-
-### Session Storage
-The authentication system uses browser localStorage to store:
-- `studentName`: Student's full name
-- `studentRoll`: Student's roll number
-- `loginTime`: Timestamp when user logged in
-- `isAuthenticated`: Boolean flag indicating authentication status
-
-### Authentication Check Function
-```javascript
-function checkAuthentication() {
-  // Validates all required authentication data
-  // Checks session expiration (24 hours)
-  // Redirects to login if invalid
-}
+```
+svu_eduhub/
+├── app.py                # Main Flask backend
+├── auth.js               # Frontend authentication logic
+├── requirements.txt      # Python dependencies
+├── students.db           # SQLite database
+├── login_activity.xlsx   # Exported login activity
+├── images/               # Subject and UI images
+├── templetes/            # Main HTML templates (login, dashboard, index)
+├── cai_templetes/        # Subject resource pages (OS, DAA, CO, BWD, MEA, SS, CONM, Semester4)
 ```
 
-### Automatic Features
-- **Session Validation**: Every 5 minutes
-- **Auto-redirect**: Invalid sessions redirect to login
-- **Cleanup**: Expired sessions clear all data
+---
 
-## Security Considerations
+## 🛠️ Setup & Installation
 
-### Client-Side Security
-- Session data stored in localStorage
-- 24-hour session expiration
-- Periodic validation checks
-- Automatic cleanup on logout
+1. **Clone the repository**
+2. **Install Python dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. **Run the Flask server:**
+   ```bash
+   python app.py
+   ```
+4. **Access the app:**
+   - Open your browser at `http://localhost:5000`
 
-### Recommended Server-Side Enhancements
-- Implement server-side session validation
-- Add JWT tokens for enhanced security
-- Use HTTPS for all communications
-- Implement rate limiting on login attempts
+---
 
-## Browser Compatibility
-- Modern browsers with localStorage support
-- JavaScript enabled required
-- Responsive design for mobile and desktop
+## 👩‍🎓 For Students
 
-## Getting Started
-1. Ensure the backend server is running (`app.py`)
-2. Open `index.html` in a web browser
-3. Login with valid student credentials
-4. Navigate through the educational content
+- **Login:** Use your roll number and password
+- **Browse:** Access protected subject resources (notes, videos, PDFs)
+- **Chatbot:** Use the AI chatbot for academic queries
+- **Logout:** Ends your session and logs activity
 
-## Support
-For technical support or questions about the authentication system, please refer to the backend documentation or contact the development team. 
+---
+
+## 👨‍💻 For Developers
+
+- **Add new subject pages:** Place HTML in `cai_templetes/`
+- **Protect new pages:** Use Flask's `@login_required` decorator
+- **Authentication logic:** See `auth.js` for frontend checks
+- **API endpoints:**
+  - `/login` (POST): Authenticate user
+  - `/logout` (POST): Logout and log activity
+  - `/check-auth` (GET): Session check
+  - `/api/openrouter` (POST): Chatbot integration
+  - `/login-activity` (GET): Recent login activity (admin)
+  - `/export-excel` (GET): Export login activity to Excel
+
+---
+
+## 🔒 Security & Session
+
+- Sessions managed via Flask (server-side, secure cookies)
+- All content pages require authentication
+- Login/logout activity is logged and exportable
+- Session data is not stored in localStorage (except for display)
+
+---
+
+## 📚 Educational Content
+
+- **Subjects:** Operating System, DAA, Computer Organization, BWD, MEA, SS, CONM
+- **Each subject:**
+  - Multiple units with notes (PDFs), important questions, and videos
+  - Access via dashboard or direct subject links
+
+---
+
+## 🤖 Chatbot
+
+- Access via `/chatgpt_test` page
+- Uses OpenRouter API for AI-powered Q&A
+- Modern chat UI with loading indicator and history
+
+---
+
+## 📝 Requirements
+
+- Python 3.8+
+- Flask, Flask-CORS, pandas, openpyxl, Werkzeug (see `requirements.txt`)
+- Modern browser (for frontend)
+
+---
+
+## 📞 Support
+
+For technical support or questions, please contact the development team or refer to the code comments in `app.py` and `auth.js`.
+
+---
+
+## 📢 Contribution
+
+Pull requests and suggestions are welcome! Please open an issue or submit a PR for improvements. 

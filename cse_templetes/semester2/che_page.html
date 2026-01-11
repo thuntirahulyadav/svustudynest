@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Chemistry-I - SVUSTUDYNEST</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    div {
+      font-family: 'Poppins', sans-serif;
+    }      
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .tab-button.active {
+      background-color: #1877F2;
+      color: white;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <nav class="w-full flex items-center justify-between px-6 md:px-16 py-4 bg-white shadow-md fixed top-0 left-0 z-10" style="box-shadow: 0 4px 16px 0 rgba(59,130,246,0.15), 0 1.5px 6px 0 rgba(59,130,246,0.10);">
+    <span class="text-2xl md:text-3xl font-extrabold text-blue-600 tracking-tight" style="text-shadow: 0 2px 8px rgba(59,130,246,0.35), 0 1px 1px rgba(59,130,246,0.25);">
+      <a href="semester2.html" class="text-blue-600 font-semibold hover:underline">&larr;&nbsp;</a>SVUSTUDYNEST</span>
+      <div class="relative">
+  <button id="profileBtn" 
+    class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center shadow hover:bg-blue-700 transition">
+        <i class="fa fa-user text-2xl text-white"></i>
+  </button>
+      </div>
+    </nav>
+
+  <!-- Content -->
+  <div class="flex-1 pt-24 px-6 sm:px-10 md:px-16 lg:px-32 xl:px-40">
+    <h1 class="text-3xl font-bold  mb-6">Chemistry-I — Complete Resources</h1>
+
+    <!-- Unit Navigation Tabs -->
+    <div class="bg-white shadow-md rounded-xl p-4 mb-8">
+      <div class="flex flex-wrap gap-2 justify-center">
+        <button class="tab-button active px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit1')">Unit 1: Atomic & Molecular Structure</button>
+        <button class="tab-button px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit2')">Unit 2: Spectroscopic Techniques</button>
+        <button class="tab-button px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit3')">Unit 3: Chemical Equilibria & Forces</button>
+        <button class="tab-button px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit4')">Unit 4: Periodic Properties</button>
+        <button class="tab-button px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit5')">Unit 5: Stereochemistry & Drug Synthesis</button>
+      </div>
+    </div>
+
+    <!-- Unit 1 -->
+    <div id="unit1" class="tab-content active">
+      <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 1: Atomic & Molecular Structure</h2>
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          Postulates of quantum chemistry, Schrödinger equation, particle in a box, molecular orbitals of diatomic molecules, molecular orbitals of polyatomic systems, Pi-molecular orbitals of butadiene and benzene, band theory of solids.
+        </p>
+
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Quantum chemistry postulates</li>
+            <li>Schrödinger equation & particle in a box</li>
+            <li>Molecular orbital theory for diatomic molecules</li>
+            <li>Energy level diagrams of diatomic molecules</li>
+            <li>Band structure & doping in solids</li>
+          </ul>
+          <br>
+          <div class="flex gap-4 mb-2">
+            <a href="unit1_chemistry.pdf" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition active:scale-95">📄 View PDF</a>
+            <a href="unit1_chemistry.pdf" download class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition active:scale-95">⬇️ Download PDF</a>
+          </div>
+        </div>
+
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions </h3>
+          <ol class="list-decimal list-inside text-gray-700 space-y-2">
+            <li>Explain the postulates of quantum chemistry with examples.</li>
+            <li>Derive the Schrödinger equation for a particle in a box.</li>
+            <li>Draw and explain the molecular orbital energy diagram for O₂ and N₂.</li>
+            <li>Discuss π-molecular orbitals of benzene.</li>
+            <li>Explain the band theory of solids and effect of doping.</li>
+          </ol>
+        </div>
+
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/vY1WJmK4iNc" title="Molecular Orbital Theory" frameborder="0" allowfullscreen></iframe>
+            <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/ZlIh1g1gkY4" title="Band Theory of Solids" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Unit 2 -->
+    <div id="unit2" class="tab-content">
+      <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 2: Spectroscopic Techniques & Applications</h2>
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          Principles of spectroscopy, electronic spectroscopy, fluorescence, vibrational & rotational spectroscopy, NMR & MRI basics, surface characterization.
+        </p>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Principles of spectroscopy & selection rules</li>
+            <li>Electronic & vibrational spectroscopy</li>
+            <li>Rotational spectroscopy for diatomic molecules</li>
+            <li>NMR spectroscopy & MRI basics</li>
+            <li>Surface characterization techniques</li>
+          </ul>
+          <br>
+          <div class="flex gap-4 mb-2">
+            <a href="unit2_chemistry.pdf" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition active:scale-95">📄 View PDF</a>
+            <a href="unit2_chemistry.pdf" download class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition active:scale-95">⬇️ Download PDF</a>
+          </div>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions </h3>
+          <ol class="list-decimal list-inside text-gray-700 space-y-2">
+            <li>Explain the principles and applications of electronic spectroscopy.</li>
+            <li>Describe vibrational and rotational spectroscopy.</li>
+            <li>Discuss the working principle of NMR spectroscopy.</li>
+            <li>Write short notes on MRI and its medical applications.</li>
+            <li>Explain surface characterization techniques.</li>
+          </ol>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/YuS6ZRzEjas" title="Spectroscopy Basics" frameborder="0" allowfullscreen></iframe>
+            <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/ha1vUG3IXlQ" title="NMR Spectroscopy" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   <!-- Unit 3 -->
+<div id="unit3" class="tab-content">
+    <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+      <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 3: Chemical Equilibria, Intermolecular Forces & Potential Energy Surfaces</h2>
+      <p class="text-gray-700 mb-6 leading-relaxed">
+        Use of free energy in thermodynamic functions: energy, entropy, and free energy. Estimations of entropy and free energies. Free energy and EMF. Cell potentials, the Nernst equation and applications. Use of free energy considerations in metallurgy through Ellingham diagram. Equations of state of real gases and critical phenomena.
+      </p>
+  
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+        <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered</h3>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Free energy, entropy, and thermodynamic functions</li>
+          <li>Electrochemical cell potentials & Nernst equation</li>
+          <li>Ellingham diagram and its applications</li>
+          <li>Equations of state for real gases</li>
+          <li>Critical phenomena in chemistry</li>
+        </ul>
+        <br>
+        <div class="flex gap-4 mb-2">
+          <a href="unit3_chemistry.pdf" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition active:scale-95">📄 View PDF</a>
+          <a href="unit3_chemistry.pdf" download class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition active:scale-95">⬇️ Download PDF</a>
+        </div>
+      </div>
+  
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+        <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions </h3>
+        <ol class="list-decimal list-inside text-gray-700 space-y-2">
+          <li>Explain Gibbs free energy and its significance in chemical reactions.</li>
+          <li>Derive the Nernst equation with suitable examples.</li>
+          <li>Discuss the Ellingham diagram and its metallurgical applications.</li>
+          <li>Explain equations of state for real gases.</li>
+          <li>Write short notes on critical phenomena.</li>
+        </ol>
+      </div>
+  
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+        <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/xjv1jPgmAq8" title="Gibbs Free Energy" frameborder="0" allowfullscreen></iframe>
+          <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/GEDmF5R5R0g" title="Nernst Equation" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Unit 4 -->
+  <div id="unit4" class="tab-content">
+    <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+      <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 4: Periodic Properties</h2>
+      <p class="text-gray-700 mb-6 leading-relaxed">
+        Effective nuclear charge, penetration of orbitals, variations of s, p, d and f orbital energies of atoms in the periodic table, electronic configurations, atomic and ionic sizes, ionization energies, electron affinity, electronegativity, polarizability, oxidation states, coordination numbers and geometries, Born–Haber cycle, properties of ionic and covalent compounds.
+      </p>
+  
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+        <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered</h3>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Effective nuclear charge & penetration of orbitals</li>
+          <li>Orbital energy variations in the periodic table</li>
+          <li>Ionization energy, electron affinity, electronegativity</li>
+          <li>Born–Haber cycle and its applications</li>
+          <li>Properties of ionic and covalent compounds</li>
+        </ul>
+        <br>
+        <div class="flex gap-4 mb-2">
+          <a href="unit4_chemistry.pdf" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition active:scale-95">📄 View PDF</a>
+          <a href="unit4_chemistry.pdf" download class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition active:scale-95">⬇️ Download PDF</a>
+        </div>
+      </div>
+  
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+        <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions </h3>
+        <ol class="list-decimal list-inside text-gray-700 space-y-2">
+          <li>Define effective nuclear charge and explain its trends.</li>
+          <li>Explain the variation of orbital energies in the periodic table.</li>
+          <li>Discuss factors affecting ionization energy.</li>
+          <li>Explain the Born–Haber cycle with an example.</li>
+          <li>Differentiate between ionic and covalent compounds.</li>
+        </ol>
+      </div>
+  
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+        <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/fSsbN9xFGnM" title="Periodic Table Trends" frameborder="0" allowfullscreen></iframe>
+          <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/d0xdtWfAUjQ" title="Born-Haber Cycle" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Unit 5 -->
+  <div id="unit5" class="tab-content">
+    <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+      <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 5: Stereochemistry, Organic Reactions & Drug Molecule Synthesis</h2>
+      <p class="text-gray-700 mb-6 leading-relaxed">
+        Representations of 3D structures, structural isomers and stereoisomers, chirality, enantiomers, diastereomers, optical activity, conformational analysis, reactions involving substitution, addition, elimination, oxidation, reduction, cyclization, and ring-opening. Synthesis of a commonly used drug molecule.
+      </p>
+  
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+        <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered</h3>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>3D representation of organic molecules</li>
+          <li>Types of isomerism: structural & stereoisomerism</li>
+          <li>Chirality & optical activity</li>
+          <li>Conformational analysis</li>
+          <li>Drug molecule synthesis basics</li>
+        </ul>
+        <br>
+        <div class="flex gap-4 mb-2">
+          <a href="unit5_chemistry.pdf" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition active:scale-95">📄 View PDF</a>
+          <a href="unit5_chemistry.pdf" download class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition active:scale-95">⬇️ Download PDF</a>
+        </div>
+      </div>
+  
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+        <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions </h3>
+        <ol class="list-decimal list-inside text-gray-700 space-y-2">
+          <li>Explain structural and stereoisomerism with examples.</li>
+          <li>Define chirality and give examples of chiral molecules.</li>
+          <li>Describe conformational analysis of ethane and cyclohexane.</li>
+          <li>Discuss oxidation and reduction reactions in organic chemistry.</li>
+          <li>Outline the steps in synthesizing a commonly used drug molecule.</li>
+        </ol>
+      </div>
+  
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+        <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/HnQGZ5Hh8Wg" title="Stereochemistry Basics" frameborder="0" allowfullscreen></iframe>
+          <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/6j4RxGcVQlk" title="Drug Synthesis Overview" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  </div>
+
+ <!-- Footer -->
+ <footer class="bg-gray-900 text-white py-12 mt-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="col-span-1 md:col-span-2">
+              <h3 class="text-2xl font-bold mb-4">SVUSTUDYNEST</h3>
+              <p class="text-gray-400">A platform for study resources for SVU students</p>
+          </div>
+          <div>
+              <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+              <ul class="space-y-2">
+                <li><a href="/templetes/csedashboard.html" class="text-gray-400 hover:text-white">Home</a></li>
+                <li><a href="semester2.html" class="text-gray-400 hover:text-white">Subjects</a></li>
+                <li><a href="/templetes/login.html" class="text-gray-400 hover:text-white">Login</a></li>
+              </ul>
+          </div>
+          <div class="grid grid-cols-2 gap-8">
+              <div>
+                  <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                  <ul class="space-y-2">
+                      <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                      <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                      
+                  </ul>
+              </div>
+              <div>
+                  <h4 id="footer-contact" class="text-lg font-semibold mb-4">Contact</h4>
+                  <ul class="space-y-2">
+                      <li><a href="mailto:support@svustudynest.com" class="text-gray-400 hover:text-white">support@svustudynest.com</a></li>
+                      <li><a href="mailto:info@svustudynest.com" class="text-gray-400 hover:text-white">info@svustudynest.com</a></li>
+                      <li><a href="mailto:help@svustudynest.com" class="text-gray-400 hover:text-white">help@svustudynest.com</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+          <p class="text-gray-400"> &copy; 2024 SVUSTUDYNEST. Sri Venkateswara University.</p>
+      </div>
+  </div>
+</footer>
+
+<!-- Include common authentication script -->
+<script src="../auth.js"></script>
+
+<!-- Tab Navigation Script -->
+<script>
+  function showTab(unitId) {
+    // Hide all tab contents
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabContents.forEach(content => {
+      content.classList.remove('active');
+    });
+
+    // Remove active class from all tab buttons
+    const tabButtons = document.querySelectorAll('.tab-button');
+    tabButtons.forEach(button => {
+      button.classList.remove('active');
+    });
+
+    // Show selected tab content
+    document.getElementById(unitId).classList.add('active');
+
+    // Add active class to clicked button
+    event.target.classList.add('active');
+  }
+</script>
+
+<!-- Slide-out Profile Overlay -->
+<div id="profileOverlay" class="fixed inset-0 z-50 hidden">
+<div class="absolute inset-0 bg-black bg-opacity-30" onclick="closeProfilePanel()"></div>
+
+<!-- Slide-out Profile Panel -->
+<div id="profilePanel" class="absolute top-0 right-0 w-80 max-w-full h-full bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col border-l border-blue-300 rounded-l-xl">
+  <div class="flex justify-between items-center px-6 py-4 border-b bg-blue-100 shadow-sm rounded-tl-xl">
+    <h2 class="text-xl font-extrabold text-blue-700">Your Profile</h2>
+    <button onclick="closeProfilePanel()" class="text-3xl font-bold text-blue-700 hover:text-blue-900 transition-transform duration-50 ease-in-out active:scale-95">&times;</button>
+  </div>
+  <div class="p-5 flex-1 overflow-y-auto text-sm text-gray-700 space-y-3">
+    <p><strong class="text-lg">Name:</strong><br> <span id="p_name" class="text-base"></span></p>
+    <p><strong class="text-lg">Roll No:</strong><br> <span id="p_roll" class="text-base"></span></p>
+    <p><strong class="text-lg">Gender:</strong><br> <span id="p_gender" class="text-base"></span></p>
+    <p><strong class="text-lg">Course:</strong><br> <span id="p_course" class="text-base"></span></p>
+    <p><strong class="text-lg">Branch:</strong><br> <span id="p_branch" class="text-base"></span></p>
+    <p><strong class="text-lg">Email:</strong><br> <span id="p_email" class="text-base"></span></p>
+    <p><strong class="text-lg">Mobile:</strong><br> <span id="p_mobile" class="text-base"></span></p>
+    <p><strong class="text-lg">Address:</strong><br> <span id="p_address" class="text-base"></span></p>
+  </div>
+  <div class="px-6 py-4 border-t bg-gray-50">
+    <button id="logoutBtn" class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-600 transition-transform duration-50 ease-in-out active:scale-95">Logout</button>
+  </div>
+</div>
+</div>
+
+<script>
+const profileBtn = document.getElementById('profileBtn');
+const profileOverlay = document.getElementById('profileOverlay');
+const profilePanel = document.getElementById('profilePanel');
+
+profileBtn.addEventListener('click', async () => {
+  profileOverlay.classList.remove('hidden');
+  profilePanel.classList.remove('translate-x-full');
+
+  const res = await fetch('/check-auth');
+  const { student_roll } = await res.json();
+  const student = await fetch(`/api/student/${student_roll}`);
+  const data = await student.json();
+
+  document.getElementById('p_name').textContent = data.name;
+  document.getElementById('p_roll').textContent = data.roll;
+  document.getElementById('p_gender').textContent = data.gender || '-';
+  document.getElementById('p_course').textContent = data.course || '-';
+  document.getElementById('p_branch').textContent = data.branch || '-';
+  document.getElementById('p_email').textContent = data.email_id || '-';
+  document.getElementById('p_mobile').textContent = data.mobileno || '-';
+  document.getElementById('p_address').textContent = data.address || '-';
+});
+
+function closeProfilePanel() {
+  profilePanel.classList.add('translate-x-full');
+  setTimeout(() => {
+    profileOverlay.classList.add('hidden');
+  }, 300);
+}
+
+window.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeProfilePanel();
+});
+</script>
+
+</body>
+</html>

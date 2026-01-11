@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Signals and Systems - Complete Course - SVUSTUDYNEST</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    div {
+      font-family: 'Poppins', sans-serif;
+    }      
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .tab-button.active {
+      background-color: #1877F2;
+      color: white;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <nav class="w-full flex items-center justify-between px-6 md:px-16 py-4 bg-white shadow-md fixed top-0 left-0 z-10" style="box-shadow: 0 4px 16px 0 rgba(59,130,246,0.15), 0 1.5px 6px 0 rgba(59,130,246,0.10);">
+    <span class="text-2xl md:text-3xl font-extrabold text-blue-600 tracking-tight" style="text-shadow: 0 2px 8px rgba(59,130,246,0.35), 0 1px 1px rgba(59,130,246,0.25);">
+      <a href="semester4.html" class="text-blue-600 font-semibold hover:underline">&larr;&nbsp;</a>SVUSTUDYNEST</span>
+      <div class="relative">
+  <button id="profileBtn" 
+    class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center shadow hover:bg-blue-700 transition">
+        <i class="fa fa-user text-2xl text-white"></i>
+  </button>
+      </div>
+    </nav>
+
+  <!-- Content -->
+  <div class="flex-1 pt-24 px-6 sm:px-10 md:px-16 lg:px-32 xl:px-40">
+    <h1 class="text-3xl font-bold text-blue-700 mb-6">Signals and Systems - Complete Resources</h1>
+    
+    <!-- Unit Navigation Tabs -->
+    <div class="bg-white shadow-md rounded-xl p-4 mb-8">
+      <div class="flex flex-wrap gap-2 justify-center">
+        <button class="tab-button active px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit1')">
+          Unit 1: Signal Analysis
+        </button>
+        <button class="tab-button px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit2')">
+          Unit 2: Linear Systems
+        </button>
+        <button class="tab-button px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit3')">
+          Unit 3: Correlation & Convolution
+        </button>
+        <button class="tab-button px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit4')">
+          Unit 4: Laplace Transforms
+        </button>
+        <button class="tab-button px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit5')">
+          Unit 5: Z-Transforms
+        </button>
+      </div>
+    </div>
+
+    <!-- Unit 1 Content -->
+    <div id="unit1" class="tab-content active">
+      <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 1: Signal Analysis</h2>
+        
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          This unit introduces the fundamentals of signals, including orthogonality, representation of signals, and Fourier transforms.
+        </p>
+
+        <!-- Topics Covered Box -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered:</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Orthogonal Signal Space, Mean Square Error</li>
+            <li>Exponential and Sinusoidal Signals</li>
+            <li>Impulse, Step, and Signum Functions</li>
+            <li>Properties of Fourier Transforms</li>
+            <li>Hilbert Transform</li>
+          </ul>
+          <br>
+          <!-- PDF Buttons -->
+          <div class="flex gap-4 mb-6">
+            <a href="ss_unit1_notes.pdf" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-transform duration-100 ease-in-out active:scale-95">📄 View PDF</a>
+            <a href="ss_unit1_notes.pdf" download class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-transform duration-100 ease-in-out active:scale-95">⬇️ Download PDF</a>
+          </div>
+        </div>
+
+        <!-- Important Questions Box -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions</h3>
+          <ul class="list-decimal list-inside text-gray-700 space-y-2">
+            <li>Explain the concept of orthogonality in signals.</li>
+            <li>Describe the properties of continuous and discrete time signals.</li>
+            <li>What is a Fourier Transform? Explain its properties.</li>
+            <li>Define Impulse, Step, and Signum functions.</li>
+          </ul>
+        </div>
+
+        <!-- Videos Box -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos to Understand Easily</h3>
+          
+          <div class="space-y-6">
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">1. Introduction to Signals & Fourier Transform</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/s8rsR_TStaA" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/1JnayXHhjlg" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Unit 2 Content -->
+    <div id="unit2" class="tab-content">
+      <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 2: Signal Transmission Through Linear Systems</h2>
+        
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          This unit covers the characteristics of linear systems, including LTI systems, impulse response, and filter characteristics.
+        </p>
+
+        <!-- Topics Covered Box -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered:</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Linear Shift Invariant (LSI) Systems</li>
+            <li>Impulse Response and Transfer Function of LTI systems</li>
+            <li>Filter Characteristics (LPF, HPF, BPF)</li>
+            <li>Paley-Wiener Criterion</li>
+          </ul>
+          <br>
+          <!-- PDF Buttons -->
+          <div class="flex gap-4 mb-6">
+            <a href="ss_unit2_notes.pdf" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-transform duration-100 ease-in-out active:scale-95">📄 View PDF</a>
+            <a href="ss_unit2_notes.pdf" download class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-transform duration-100 ease-in-out active:scale-95">⬇️ Download PDF</a>
+          </div>
+        </div>
+
+        <!-- Important Questions Box -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions</h3>
+          <ul class="list-decimal list-inside text-gray-700 space-y-2">
+            <li>What is an LTI system? Explain its properties.</li>
+            <li>Define impulse response and transfer function.</li>
+            <li>Explain the characteristics of LPF, HPF, and BPF filters.</li>
+            <li>State and prove the Paley-Wiener criterion.</li>
+          </ul>
+        </div>
+
+        <!-- Videos Box -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos to Understand Easily</h3>
+          
+          <div class="space-y-6">
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">1. LTI Systems & Filter Characteristics</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/Tpr4M-s5Ihs" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/de-D_T3L2pU" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Unit 3 Content -->
+    <div id="unit3" class="tab-content">
+      <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 3: Correlation and Convolution of Signals</h2>
+        
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          This unit covers the concepts of convolution and correlation, along with their properties and applications.
+        </p>
+
+        <!-- Topics Covered Box -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered:</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Convolution in Time and Frequency Domain</li>
+            <li>Cross-correlation and Auto-correlation</li>
+            <li>Energy and Power Density Spectrum</li>
+            <li>Parseval's Theorem</li>
+            <li>Signal Extraction from Noise</li>
+          </ul>
+          <br>
+          <!-- PDF Buttons -->
+          <div class="flex gap-4 mb-6">
+            <a href="ss_unit3_notes.pdf" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-transform duration-100 ease-in-out active:scale-95">📄 View PDF</a>
+            <a href="ss_unit3_notes.pdf" download class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-transform duration-100 ease-in-out active:scale-95">⬇️ Download PDF</a>
+          </div>
+        </div>
+
+        <!-- Important Questions Box -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions</h3>
+          <ul class="list-decimal list-inside text-gray-700 space-y-2">
+            <li>Explain the convolution property of Fourier Transforms.</li>
+            <li>Differentiate between convolution and correlation.</li>
+            <li>State and prove Parseval's theorem for energy signals.</li>
+            <li>How can periodic signals be detected in noise using correlation?</li>
+          </ul>
+        </div>
+
+        <!-- Videos Box -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos to Understand Easily</h3>
+          
+          <div class="space-y-6">
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">1. Convolution & Correlation</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/dpmy-F2eIeM" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/l5921hE8l8s" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Unit 4 Content -->
+    <div id="unit4" class="tab-content">
+      <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 4: Laplace Transforms</h2>
+        
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          This unit provides a review of Laplace transforms, including Region of Convergence (ROC) and its properties.
+        </p>
+
+        <!-- Topics Covered Box -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered:</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Review of Laplace Transforms</li>
+            <li>Region of Convergence (ROC)</li>
+            <li>Properties of Laplace Transforms</li>
+            <li>Relation between Laplace and Fourier Transforms</li>
+            <li>Inverse Laplace Transform</li>
+          </ul>
+          <br>
+          <!-- PDF Buttons -->
+          <div class="flex gap-4 mb-6">
+            <a href="ss_unit4_notes.pdf" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-transform duration-100 ease-in-out active:scale-95">📄 View PDF</a>
+            <a href="ss_unit4_notes.pdf" download class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-transform duration-100 ease-in-out active:scale-95">⬇️ Download PDF</a>
+          </div>
+        </div>
+
+        <!-- Important Questions Box -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions</h3>
+          <ul class="list-decimal list-inside text-gray-700 space-y-2">
+            <li>What is the Region of Convergence (ROC)? Explain its properties.</li>
+            <li>State and prove the important properties of Laplace Transforms.</li>
+            <li>What is the relation between Laplace and Fourier transforms?</li>
+            <li>Find the inverse Laplace transform of a given function.</li>
+          </ul>
+        </div>
+
+        <!-- Videos Box -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos to Understand Easily</h3>
+          
+          <div class="space-y-6">
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">1. Laplace Transform & Region of Convergence (ROC)</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/Z-iI3t_YV2Y" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/5-s4i_i2LgY" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Unit 5 Content -->
+    <div id="unit5" class="tab-content">
+      <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 5: Z-Transforms</h2>
+        
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          This unit introduces the Z-Transform, its properties, and its application in solving difference equations.
+        </p>
+
+        <!-- Topics Covered Box -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered:</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Concept of Z-Transform</li>
+            <li>Region of Convergence (ROC) for Z-Transform</li>
+            <li>Properties of Z-Transforms</li>
+            <li>Inverse Z-Transform</li>
+            <li>Solving Difference Equations using Z-Transform</li>
+          </ul>
+          <br>
+          <!-- PDF Buttons -->
+          <div class="flex gap-4 mb-6">
+            <a href="ss_unit5_notes.pdf" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-transform duration-100 ease-in-out active:scale-95">📄 View PDF</a>
+            <a href="ss_unit5_notes.pdf" download class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-transform duration-100 ease-in-out active:scale-95">⬇️ Download PDF</a>
+          </div>
+        </div>
+
+        <!-- Important Questions Box -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions</h3>
+          <ul class="list-decimal list-inside text-gray-700 space-y-2">
+            <li>Distinguish between Laplace, Fourier, and Z-transforms.</li>
+            <li>Explain the ROC for Z-transforms with its constraints.</li>
+            <li>State and prove the properties of Z-transforms.</li>
+            <li>Solve a difference equation using the Z-transform.</li>
+          </ul>
+        </div>
+
+        <!-- Videos Box -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos to Understand Easily</h3>
+          
+          <div class="space-y-6">
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">1. Z-Transform & its Properties</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/c-zGv_g_qI8" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/u4p3mYgHY-c" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <!-- Footer -->
+   <footer class="bg-gray-900 text-white py-12 mt-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="col-span-1 md:col-span-2">
+                <h3 class="text-2xl font-bold mb-4">SVUSTUDYNEST</h3>
+                <p class="text-gray-400">A platform for study resources for SVU students</p>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                  <li><a href="/templetes/csedashboard.html" class="text-gray-400 hover:text-white">Home</a></li>
+                  <li><a href="semester4.html" class="text-gray-400 hover:text-white">Subjects</a></li>
+                  <li><a href="/templetes/login.html" class="text-gray-400 hover:text-white">Login</a></li>
+                </ul>
+            </div>
+            <div class="grid grid-cols-2 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                        
+                    </ul>
+                </div>
+                <div>
+                    <h4 id="footer-contact" class="text-lg font-semibold mb-4">Contact</h4>
+                   <ul class="space-y-2">
+                        <li><a href="mailto:support@svustudynest.com" class="text-gray-400 hover:text-white">support@svustudynest.com</a></li>
+                      <li><a href="mailto:info@svustudynest.com" class="text-gray-400 hover:text-white">info@svustudynest.com</a></li>
+                      <li><a href="mailto:help@svustudynest.com" class="text-gray-400 hover:text-white">help@svustudynest.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+            <p class="text-gray-400"> &copy; 2024 SVUSTUDYNEST. Sri Venkateswara University.</p>
+        </div>
+    </div>
+</footer>
+
+  <!-- Include common authentication script -->
+  <script src="../auth.js"></script>
+
+  <!-- Tab Navigation Script -->
+  <script>
+    function showTab(unitId) {
+      // Hide all tab contents
+      const tabContents = document.querySelectorAll('.tab-content');
+      tabContents.forEach(content => {
+        content.classList.remove('active');
+      });
+
+      // Remove active class from all tab buttons
+      const tabButtons = document.querySelectorAll('.tab-button');
+      tabButtons.forEach(button => {
+        button.classList.remove('active');
+      });
+
+      // Show selected tab content
+      document.getElementById(unitId).classList.add('active');
+
+      // Add active class to clicked button
+      event.target.classList.add('active');
+    }
+  </script>
+
+  <!-- Slide-out Profile Overlay -->
+<div id="profileOverlay" class="fixed inset-0 z-50 hidden">
+  <div class="absolute inset-0 bg-black bg-opacity-30" onclick="closeProfilePanel()"></div>
+
+  <!-- Slide-out Profile Panel -->
+  <div id="profilePanel" class="absolute top-0 right-0 w-80 max-w-full h-full bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col border-l border-blue-300 rounded-l-xl">
+    <div class="flex justify-between items-center px-6 py-4 border-b bg-blue-100 shadow-sm rounded-tl-xl">
+      <h2 class="text-xl font-extrabold text-blue-700">Your Profile</h2>
+      <button onclick="closeProfilePanel()" class="text-3xl font-bold text-blue-700 hover:text-blue-900 transition-transform duration-50 ease-in-out active:scale-95">&times;</button>
+    </div>
+    <div class="p-5 flex-1 overflow-y-auto text-sm text-gray-700 space-y-3">
+      <p><strong class="text-lg">Name:</strong><br> <span id="p_name" class="text-base"></span></p>
+      <p><strong class="text-lg">Roll No:</strong><br> <span id="p_roll" class="text-base"></span></p>
+      <p><strong class="text-lg">Gender:</strong><br> <span id="p_gender" class="text-base"></span></p>
+      <p><strong class="text-lg">Course:</strong><br> <span id="p_course" class="text-base"></span></p>
+      <p><strong class="text-lg">Branch:</strong><br> <span id="p_branch" class="text-base"></span></p>
+      <p><strong class="text-lg">Email:</strong><br> <span id="p_email" class="text-base"></span></p>
+      <p><strong class="text-lg">Mobile:</strong><br> <span id="p_mobile" class="text-base"></span></p>
+      <p><strong class="text-lg">Address:</strong><br> <span id="p_address" class="text-base"></span></p>
+    </div>
+    <div class="px-6 py-4 border-t bg-gray-50">
+      <button id="logoutBtn" class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-600 transition-transform duration-50 ease-in-out active:scale-95">Logout</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const profileBtn = document.getElementById('profileBtn');
+  const profileOverlay = document.getElementById('profileOverlay');
+  const profilePanel = document.getElementById('profilePanel');
+
+  profileBtn.addEventListener('click', async () => {
+    profileOverlay.classList.remove('hidden');
+    profilePanel.classList.remove('translate-x-full');
+
+    const res = await fetch('/check-auth');
+    const { student_roll } = await res.json();
+    const student = await fetch(`/api/student/${student_roll}`);
+    const data = await student.json();
+
+    document.getElementById('p_name').textContent = data.name;
+    document.getElementById('p_roll').textContent = data.roll;
+    document.getElementById('p_gender').textContent = data.gender || '-';
+    document.getElementById('p_course').textContent = data.course || '-';
+    document.getElementById('p_branch').textContent = data.branch || '-';
+    document.getElementById('p_email').textContent = data.email_id || '-';
+    document.getElementById('p_mobile').textContent = data.mobileno || '-';
+    document.getElementById('p_address').textContent = data.address || '-';
+  });
+
+  function closeProfilePanel() {
+    profilePanel.classList.add('translate-x-full');
+    setTimeout(() => {
+      profileOverlay.classList.add('hidden');
+    }, 300);
+  }
+
+  window.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeProfilePanel();
+  });
+</script>
+
+</body>
+</html> 

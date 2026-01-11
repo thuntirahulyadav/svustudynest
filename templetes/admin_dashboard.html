@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>SVUSTUDYNEST - Admin Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    nav { font-family: 'Montserrat', sans-serif; }
+    body, div { font-family: 'Poppins', sans-serif; }
+  </style>
+  <script>
+    // Minimal role guard to avoid flicker
+    async function ensureAdmin() {
+      try {
+        const res = await fetch('/check-auth', { credentials: 'include', cache: 'no-cache' });
+        if (!res.ok) {
+          window.location.href = '/login.html';
+          return false;
+        }
+        const data = await res.json();
+        if (!data.authenticated) {
+          window.location.href = '/login.html';
+          return false;
+        }
+        if (data.student_role !== 'admin') {
+          window.location.href = '/dashboard.html';
+          return false;
+        }
+        return true;
+      } catch (e) {
+        window.location.href = '/login.html';
+        return false;
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+    <!-- Navbar -->
+  <nav class="w-full flex items-center justify-between px-6 md:px-16 py-4 bg-white shadow-md fixed top-0 left-0 z-10" style="box-shadow: 0 4px 16px 0 rgba(59,130,246,0.15), 0 1.5px 6px 0 rgba(59,130,246,0.10);">
+    <span class="text-2xl md:text-3xl font-extrabold text-blue-600 tracking-tight" style="text-shadow: 0 2px 8px rgba(59,130,246,0.35), 0 1px 1px rgba(59,130,246,0.25);">
+      SVUSTUDYNEST Admin</span>
+     <div class="flex items-center gap-3">
+      <a href="/dashboard.html" class="text-white/90 hover:text-white text-sm font-semibold">Student View</a>
+      <button id="logoutBtn" class="bg-white/10 border border-blue/20 text-blue-600 px-3 py-1.5 rounded-lg text-sm font-semibold hover:bg-white/20 transition-transform duration-100 ease-in-out active:scale-95">Logout<i class="fa fa-sign-out text-blue-600 pl-2"></i></button>
+    </div>
+    </nav>
+
+  <main class="flex-1 px-4 md:px-10 pt-24 pb-10 max-w-7xl mx-auto w-full">
+    <!-- Stat Cards -->
+    <section class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
+      <div class="bg-white rounded-2xl shadow p-5">
+        <div class="text-gray-500 text-sm">Total Students</div>
+        <div id="statTotalStudents" class="text-3xl font-extrabold text-blue-700 mt-2">-</div>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-5">
+        <div class="text-gray-500 text-sm">Active Students</div>
+        <div id="statActiveStudents" class="text-3xl font-extrabold text-blue-700 mt-2">-</div>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-5">
+        <div class="text-gray-500 text-sm">Deactive Students</div>
+        <div id="statDeactiveStudents" class="text-3xl font-extrabold text-blue-700 mt-2">-</div>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-5">
+        <div class="text-gray-500 text-sm">Admins</div>
+        <div id="statTotalAdmins" class="text-3xl font-extrabold text-blue-700 mt-2">-</div>
+      </div>
+      <a href="/admin_logins.html">
+      <div class="bg-white rounded-2xl shadow p-5 transition-transform duration-100 ease-in-out active:scale-95">
+        <div class="text-gray-500 text-sm">Total Log Events</div>
+        <div id="statTotalLogins" class="text-3xl font-extrabold text-blue-700 mt-2">-</div>
+      </div></a>
+      <a href="/admin_logins.html">
+      <div class="bg-white rounded-2xl shadow p-5 transition-transform duration-100 ease-in-out active:scale-95 ">
+        <div class="text-gray-500 text-sm">Logins Today</div>
+        <div id="statLoginsToday" class="text-3xl font-extrabold text-blue-700 mt-2">-</div>
+      </div></a>
+    </section>
+
+    <!-- Create Student Form -->
+    <section class="bg-white rounded-2xl shadow p-5 mt-6">
+      <h2 class="text-lg font-semibold text-gray-800 mb-4">Add New Student</h2>
+      <form id="createStudentForm" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div>
+          <label class="block text-sm text-gray-600 mb-1">Name<span class="text-red-500">*</span></label>
+          <input name="name" type="text" placeholder="Enter Student Name" required class="w-full border border-gray-300 rounded-lg px-3 py-2" />
+        </div>
+        <div>
+          <label class="block text-sm text-gray-600 mb-1">Roll<span class="text-red-500">*</span></label>
+          <input name="roll" type="text" placeholder="Enter Student Roll" required class="w-full border border-gray-300 rounded-lg px-3 py-2" />
+        </div>
+        <div>
+          <label class="block text-sm text-gray-600 mb-1">Password<span class="text-red-500">*</span></label>
+          <input name="password" type="password" placeholder="Enter Password" required class="w-full border border-gray-300 rounded-lg px-3 py-2" />
+        </div>
+        <div>
+          <label class="block text-sm text-gray-600 mb-1">Gender<span class="text-red-500">*</span></label>
+          <select name="gender" required class="w-full border border-gray-300 rounded-lg px-3 py-2">
+            <option value="">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm text-gray-600 mb-1">Course<span class="text-red-500">*</span></label>
+          <select name="course" required class="w-full border border-gray-300 rounded-lg px-3 py-2">
+            <option value="">Select</option>
+            <option value="Btech">B.tech</option>
+            <option value="Mtech">M.tech</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm text-gray-600 mb-1">Branch<span class="text-red-500">*</span></label>
+          <select name="branch" required class="w-full border border-gray-300 rounded-lg px-3 py-2">
+            <option value="">Select</option>
+            <option value="Computer Science and Engineering">Computer Science and Engineering</option>
+            <option value="Electronics and Communication Engineering">Electronics and Communication Engineering</option>
+            <option value="Electrical and Electronics Engineering">Electrical and Electronics Engineering</option>
+            <option value="Civil Engineering">Civil Engineering</option>
+            <option value="Mechanical Engineering">Mechanical Engineering</option>
+            <option value="Chemical Engineering">Chemical Engineering</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm text-gray-600 mb-1">Year<span class="text-red-500">*</span></label>
+          <select name="year" required class="w-full border border-gray-300 rounded-lg px-3 py-2">
+            <option value="">Select</option>
+            <option value="1st year">1st year</option>
+            <option value="2nd year">2nd year</option>
+            <option value="3rd year">3rd year</option>
+            <option value="4th year">4th year</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm text-gray-600 mb-1">Role<span class="text-red-500">*</span></label>
+          <select name="role" required class="w-full border border-gray-300 rounded-lg px-3 py-2">
+            <option value="student" selected>student</option>
+            <option value="admin">admin</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm text-gray-600 mb-1">Status<span class="text-red-500">*</span></label>
+          <select name="status" required class="w-full border border-gray-300 rounded-lg px-3 py-2">
+            <option value="active" selected>Active</option>
+            <option value="deactive">Deactive</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm text-gray-600 mb-1">Mobile<span class="text-red-500">*</span></label>
+          <input name="mobileno" type="text" placeholder="Enter Mobile Number" required class="w-full border border-gray-300 rounded-lg px-3 py-2" />
+        </div>
+        <div>
+          <label class="block text-sm text-gray-600 mb-1">Email<span class="text-red-500">*</span></label>
+          <input name="email_id" type="email" placeholder="Enter Email Id" required class="w-full border border-gray-300 rounded-lg px-3 py-2" />
+        </div>
+        <div>
+          <label class="block text-sm text-gray-600 mb-1">Aadhar No<span class="text-red-500">*</span></label>
+          <input name="aadhar_no" type="text" placeholder="Enter Student Aadhar" required class="w-full border border-gray-300 rounded-lg px-3 py-2" />
+        </div>
+        <div class="md:col-span-3">
+          <label class="block text-sm text-gray-600 mb-1">Address<span class="text-red-500">*</span></label>
+          <input name="address" type="text" placeholder="Enter Student Address" required class="w-full border border-gray-300 rounded-lg px-3 py-2" />
+        </div>
+        <div class="md:col-span-3 flex items-center gap-3">
+          <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700">Create Student</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Branch Cards and Year Filters -->
+    <section class="bg-white rounded-2xl shadow p-5 mt-6">
+      <div class="flex flex-col gap-4">
+        <div class="flex items-center justify-between">
+          <h2 class="text-lg font-semibold text-gray-800">Browse Students by Branch</h2>
+          
+        </div>
+
+        <!-- Branch cards grid -->
+        <div id="branchGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+
+        <!-- Year filter pills (shown after selecting a branch) -->
+        <div id="yearFilters" class="">
+          <div class="flex items-center justify-between gap-2 w-full">
+            <div class="flex items-center gap-2">
+              <button data-year="1st year" class="year-pill bg-blue-600 text-white px-3 py-1.5 rounded-full text-sm">1st year <span class="ml-1 text-xs opacity-75">0</span></button>
+              <button data-year="2nd year" class="year-pill px-3 py-1.5 rounded-full border text-sm">2nd year <span class="ml-1 text-xs opacity-75">0</span></button>
+              <button data-year="3rd year" class="year-pill px-3 py-1.5 rounded-full border text-sm">3rd year <span class="ml-1 text-xs opacity-75">0</span></button>
+              <button data-year="4th year" class="year-pill px-3 py-1.5 rounded-full border text-sm">4th year <span class="ml-1 text-xs opacity-75">0</span></button>
+            </div>
+            <div class="flex gap-2">
+              <input id="searchInput" type="text" placeholder="Search name, roll, email" class="border border-gray-300 rounded-lg px-3 py-2 w-64" />
+              <button id="searchBtn" class="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-transform duration-100 ease-in-out active:scale-95">Search</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Students list -->
+        <div>
+         
+          <div class="overflow-x-auto mt-2">
+            <table class="min-w-full text-sm">
+              <thead>
+                <tr class="text-left text-gray-600 border-b">
+                  <th class="py-2 pr-4">Name</th>
+                  <th class="py-2 pr-4">Roll</th>
+                  <th class="py-2 pr-4">Branch</th>
+                  <th class="py-2 pr-4">Year</th>
+                  <th class="py-2 pr-4">Course</th>
+                  <th class="py-2 pr-4">Email</th>
+                  <th class="py-2 pr-4">Mobile</th>
+                  <th class="py-2 pr-4">Role</th>
+                  <th class="py-2 pr-4">Status</th>
+                  <th class="py-2 pr-4">Date</th>
+                  <th class="py-2 pr-4">Edit</th>
+                </tr>
+              </thead>
+              <tbody id="studentsTbody">
+                <tr><td class="py-3 text-gray-400" colspan="10">Select a branch</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="flex items-center justify-end gap-2 mt-4">
+            <button id="prevBtn" class="px-3 py-1.5 rounded-lg border text-gray-700 hover:bg-gray-50 disabled:opacity-50" disabled>Prev</button>
+            <span id="pageInfo" class="text-sm text-gray-600">Page 1</span>
+            <button id="nextBtn" class="px-3 py-1.5 rounded-lg border text-gray-700 hover:bg-gray-50 disabled:opacity-50">Next</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Edit Student Modal -->
+  <div id="editModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+      <div class="p-6">
+        <div class="flex items-center justify-between mb-6">
+          <h3 class="text-xl font-semibold text-gray-800">Edit Student</h3>
+          <button id="closeEditModal" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+        </div>
+        <form id="editStudentForm" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <input type="hidden" id="editStudentId" name="id" />
+          <div>
+            <label class="block text-sm text-gray-600 mb-1">Name<span class="text-red-500">*</span></label>
+            <input id="editName" name="name" type="text" required class="w-full border border-gray-300 rounded-lg px-3 py-2" />
+          </div>
+          <div>
+            <label class="block text-sm text-gray-600 mb-1">Roll<span class="text-red-500">*</span></label>
+            <input id="editRoll" name="roll" type="text" required class="w-full border border-gray-300 rounded-lg px-3 py-2" />
+          </div>
+          <div>
+            <label class="block text-sm text-gray-600 mb-1">Password<span class="text-red-500">*</span></label>
+            <input id="editPassword" name="password" type="password" required class="w-full border border-gray-300 rounded-lg px-3 py-2" />
+          </div>
+          <div>
+            <label class="block text-sm text-gray-600 mb-1">Gender<span class="text-red-500">*</span></label>
+            <select id="editGender" name="gender" required class="w-full border border-gray-300 rounded-lg px-3 py-2">
+              <option value="">Select</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm text-gray-600 mb-1">Course<span class="text-red-500">*</span></label>
+            <select id="editCourse" name="course" required class="w-full border border-gray-300 rounded-lg px-3 py-2">
+              <option value="">Select</option>
+              <option value="Btech">B.tech</option>
+              <option value="Mtech">M.tech</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm text-gray-600 mb-1">Branch<span class="text-red-500">*</span></label>
+            <select id="editBranch" name="branch" required class="w-full border border-gray-300 rounded-lg px-3 py-2">
+              <option value="">Select</option>
+              <option value="Computer Science and Engineering">Computer Science and Engineering</option>
+              <option value="Electronics and Communication Engineering">Electronics and Communication Engineering</option>
+              <option value="Electrical and Electronics Engineering">Electrical and Electronics Engineering</option>
+              <option value="Civil Engineering">Civil Engineering</option>
+              <option value="Mechanical Engineering">Mechanical Engineering</option>
+              <option value="Chemical Engineering">Chemical Engineering</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm text-gray-600 mb-1">Year<span class="text-red-500">*</span></label>
+            <select id="editYear" name="year" required class="w-full border border-gray-300 rounded-lg px-3 py-2">
+              <option value="">Select</option>
+              <option value="1st year">1st year</option>
+              <option value="2nd year">2nd year</option>
+              <option value="3rd year">3rd year</option>
+              <option value="4th year">4th year</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm text-gray-600 mb-1">Role<span class="text-red-500">*</span></label>
+            <select id="editRole" name="role" required class="w-full border border-gray-300 rounded-lg px-3 py-2">
+              <option value="student">student</option>
+              <option value="admin">admin</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm text-gray-600 mb-1">Status<span class="text-red-500">*</span></label>
+            <select id="editStatus" name="status" required class="w-full border border-gray-300 rounded-lg px-3 py-2">
+              <option value="active">Active</option>
+              <option value="deactive">Deactive</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm text-gray-600 mb-1">Mobile<span class="text-red-500">*</span></label>
+            <input id="editMobile" name="mobileno" type="text" required class="w-full border border-gray-300 rounded-lg px-3 py-2" />
+          </div>
+          <div>
+            <label class="block text-sm text-gray-600 mb-1">Email<span class="text-red-500">*</span></label>
+            <input id="editEmail" name="email_id" type="email" required class="w-full border border-gray-300 rounded-lg px-3 py-2" />
+          </div>
+          <div>
+            <label class="block text-sm text-gray-600 mb-1">Aadhar No<span class="text-red-500">*</span></label>
+            <input id="editAadhar" name="aadhar_no" type="text" required class="w-full border border-gray-300 rounded-lg px-3 py-2" />
+          </div>
+          <div class="md:col-span-3">
+            <label class="block text-sm text-gray-600 mb-1">Address<span class="text-red-500">*</span></label>
+            <input id="editAddress" name="address" type="text" required class="w-full border border-gray-300 rounded-lg px-3 py-2" />
+          </div>
+          <div class="md:col-span-3 flex items-center gap-3">
+            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700">Update Student</button>
+            <span id="editStatusMessage" class="text-sm"></span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+   <footer class="bg-gray-900 text-white py-12 mt-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="col-span-1 md:col-span-2">
+                <h3 class="text-2xl font-bold mb-4">SVUSTUDYNEST</h3>
+                <p class="text-gray-400">A platform for study resources for SVU students</p>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="/csedashboard.html" class="text-gray-400 hover:text-white">Home</a></li>
+                   
+                    <li><a href="/login.html" class="text-gray-400 hover:text-white">Login</a></li>
+                   
+                </ul>
+            </div>
+            <div class="grid grid-cols-2 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                        
+                    </ul>
+                </div>
+                <div>
+                    <h4 id="footer-contact" class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li><a href="mailto:support@healthvault.com" class="text-gray-400 hover:text-white">support@healthvault.com</a></li>
+                        <li><a href="mailto:info@healthvault.com" class="text-gray-400 hover:text-white">info@healthvault.com</a></li>
+                        <li><a href="mailto:help@healthvault.com" class="text-gray-400 hover:text-white">help@healthvault.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+            <p class="text-gray-400"> &copy; 2024 SVUSTUDYNEST. Sri Venkateswara University.</p>
+        </div>
+    </div>
+</footer>
+
+  <!-- Auth helpers (logout modal etc.) -->
+  <script src="../auth.js"></script>
+  <script>
+    let currentOffset = 0;
+    let currentQuery = '';
+     const pageSize = 20;
+     let selectedBranch = '';
+     let selectedYear = '1st year';
+
+    // Static branch list to always render all cards
+    const STATIC_BRANCHES = [
+      'Computer Science and Engineering',
+      'Electronics and Communication Engineering',
+      'Civil Engineering',
+      'Electrical and Electronics Engineering',
+      'Mechanical Engineering',
+      'Chemical Engineering'
+    ];
+
+    async function loadStats() {
+      const res = await fetch('/api/admin/stats', { credentials: 'include', cache: 'no-cache' });
+      if (!res.ok) return;
+      const data = await res.json();
+      if (!data.success) return;
+      const s = data.stats;
+      document.getElementById('statTotalStudents').textContent = s.total_students;
+      document.getElementById('statTotalAdmins').textContent = s.total_admins;
+      document.getElementById('statActiveStudents').textContent = s.active_students;
+      document.getElementById('statDeactiveStudents').textContent = s.deactive_students;
+      document.getElementById('statTotalLogins').textContent = s.total_logins;
+      document.getElementById('statLoginsToday').textContent = s.logins_today;
+    }
+
+    function renderStudents(rows) {
+      const tbody = document.getElementById('studentsTbody');
+      tbody.innerHTML = '';
+      if (!rows || rows.length === 0) {
+        tbody.innerHTML = '<tr><td class="py-3 text-gray-400" colspan="11">No results</td></tr>';
+        return;
+      }
+      for (const r of rows) {
+        const tr = document.createElement('tr');
+        tr.className = 'border-b hover:bg-gray-50';
+        tr.innerHTML = `
+          <td class="py-2 pr-4">${r.name || '-'}</td>
+          <td class="py-2 pr-4">${r.roll || '-'}</td>
+          <td class="py-2 pr-4">${r.branch || '-'}</td>
+          <td class="py-2 pr-4">${r.year || '-'}</td>
+          <td class="py-2 pr-4">${r.course || '-'}</td>
+          <td class="py-2 pr-4">${r.email_id || '-'}</td>
+          <td class="py-2 pr-4">${r.mobileno || '-'}</td>
+          <td class="py-2 pr-4">${r.role || '-'}</td>
+          <td class="py-2 pr-4">${r.status || '-'}</td>
+          <td class="py-2 pr-4">${(() => { const d = r.date; if (!d) return '-'; const iso = d.includes('T') ? d : d.replace(' ', 'T'); const dt = new Date(iso); return isNaN(dt.getTime()) ? d : dt.toLocaleString(); })()}</td>
+          <td class="py-2 pr-4">
+            <button onclick="editStudent(${r.id})" class="bg-blue-500 text-white px-2 py-1 rounded text-xs hover:bg-blue-600">Edit</button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      }
+    }
+
+    async function loadStudents() {
+      const params = new URLSearchParams({ limit: String(pageSize), offset: String(currentOffset) });
+      if (currentQuery) params.set('query', currentQuery);
+      if (selectedBranch) params.set('branch', selectedBranch);
+      if (selectedYear) params.set('year', selectedYear);
+      const res = await fetch('/api/admin/students?' + params.toString(), { credentials: 'include', cache: 'no-cache' });
+      if (!res.ok) return;
+      const data = await res.json();
+      if (!data.success) return;
+      renderStudents(data.students);
+      document.getElementById('prevBtn').disabled = currentOffset === 0;
+      const page = Math.floor(currentOffset / pageSize) + 1;
+      document.getElementById('pageInfo').textContent = `Page ${page}`;
+      document.getElementById('nextBtn').disabled = data.students.length < pageSize;
+    }
+
+    function renderBranchCards(branchCounts) {
+      const grid = document.getElementById('branchGrid');
+      grid.innerHTML = '';
+      // Build a map of counts from backend
+      const countMap = new Map();
+      if (Array.isArray(branchCounts)) {
+        for (const b of branchCounts) {
+          if (b && typeof b.branch === 'string') {
+            countMap.set(b.branch, Number(b.count) || 0);
+          }
+        }
+      }
+      // Render all static branches with default 0
+      for (const branchName of STATIC_BRANCHES) {
+        const count = countMap.get(branchName) || 0;
+        const card = document.createElement('button');
+        card.className = 'text-left bg-blue-50 hover:bg-blue-100 border-2 border-transparent rounded-2xl p-4 transition-all duration-200 flex items-center justify-between shadow-sm hover:shadow-md';
+        card.innerHTML = `
+          <div>
+            <div class="text-sm text-gray-600">Branch</div>
+            <div class="text-lg font-semibold text-blue-700 pt-3 ">${branchName}</div>
+          </div>
+          <div class="text-2xl font-extrabold text-blue-700 pl-3" >${count}</div>
+        `;
+        card.addEventListener('click', () => {
+          // Remove active border from all cards
+          document.querySelectorAll('#branchGrid button').forEach(btn => {
+            btn.classList.remove('border-blue-500');
+            btn.classList.add('border-transparent');
+          });
+          
+          // Add active border to clicked card only
+          card.classList.remove('border-transparent');
+          card.classList.add('border-blue-500');
+          
+          selectedBranch = branchName;
+          selectedYear = '1st year';
+          document.getElementById('yearFilters').classList.remove('hidden');
+          // activate first pill
+          for (const pill of document.querySelectorAll('.year-pill')) {
+            pill.classList.remove('bg-blue-600','text-white');
+            pill.classList.add('border');
+          }
+          const first = document.querySelector('.year-pill[data-year="1st year"]');
+          if (first) {
+            first.classList.add('bg-blue-600','text-white');
+            first.classList.remove('border');
+          }
+          currentOffset = 0;
+          loadStudents();
+          loadYearCounts(selectedBranch); // Load year counts for the selected branch
+        });
+        grid.appendChild(card);
+      }
+    }
+
+    async function loadBranches() {
+      try {
+        const res = await fetch('/api/admin/stats', { credentials: 'include', cache: 'no-cache' });
+        const data = res.ok ? await res.json() : { success: false };
+        const byBranch = data && data.success && data.stats ? data.stats.by_branch : [];
+        renderBranchCards(byBranch);
+      } catch (_) {
+        renderBranchCards([]);
+      }
+      // Auto-select first static branch card by default
+      const firstCard = document.querySelector('#branchGrid button');
+      if (firstCard) firstCard.click();
+    }
+
+    async function loadYearCounts(branch) {
+      try {
+        const res = await fetch(`/api/admin/students?branch=${encodeURIComponent(branch)}&limit=1000`, { 
+          credentials: 'include', 
+          cache: 'no-cache' 
+        });
+        if (!res.ok) return;
+        const data = await res.json();
+        if (!data.success) return;
+        
+        // Count students by year
+        const yearCounts = {
+          '1st year': 0,
+          '2nd year': 0,
+          '3rd year': 0,
+          '4th year': 0
+        };
+        
+        data.students.forEach(student => {
+          if (student.year && yearCounts.hasOwnProperty(student.year)) {
+            yearCounts[student.year]++;
+          }
+        });
+        
+        // Update year pill counts
+        Object.keys(yearCounts).forEach(year => {
+          const pill = document.querySelector(`[data-year="${year}"]`);
+          if (pill) {
+            const countSpan = pill.querySelector('span');
+            if (countSpan) {
+              countSpan.textContent = `${yearCounts[year]}`;
+            }
+          }
+        });
+      } catch (err) {
+        console.error('Error loading year counts:', err);
+      }
+    }
+
+    async function editStudent(studentId) {
+      try {
+        const res = await fetch(`/api/admin/students/${studentId}`, { 
+          credentials: 'include', 
+          cache: 'no-cache' 
+        });
+        if (!res.ok) {
+          alert('Failed to load student data');
+          return;
+        }
+        const data = await res.json();
+        if (!data.success) {
+          alert(data.error || 'Failed to load student data');
+          return;
+        }
+        
+        const student = data.student;
+        // Populate form fields
+        document.getElementById('editStudentId').value = student.id;
+        document.getElementById('editName').value = student.name || '';
+        document.getElementById('editRoll').value = student.roll || '';
+        document.getElementById('editPassword').value = student.password || '';
+        document.getElementById('editGender').value = student.gender || '';
+        document.getElementById('editCourse').value = student.course || '';
+        document.getElementById('editBranch').value = student.branch || '';
+        document.getElementById('editYear').value = student.year || '';
+        document.getElementById('editRole').value = student.role || 'student';
+        document.getElementById('editStatus').value = student.status || '';
+        document.getElementById('editMobile').value = student.mobileno || '';
+        document.getElementById('editEmail').value = student.email_id || '';
+        document.getElementById('editAadhar').value = student.aadhar_no || '';
+        document.getElementById('editAddress').value = student.address || '';
+        
+        // Show modal
+        document.getElementById('editModal').classList.remove('hidden');
+      } catch (err) {
+        alert('Error loading student data');
+      }
+    }
+
+    async function updateStudent(e) {
+      e.preventDefault();
+      const form = document.getElementById('editStudentForm');
+      const statusEl = document.getElementById('editStatusMessage');
+      statusEl.textContent = '';
+      
+      const formData = new FormData(form);
+      const payload = {};
+      for (const [k, v] of formData.entries()) {
+        payload[k] = v && typeof v === 'string' ? v.trim() : v;
+      }
+      
+      const studentId = payload.id;
+      delete payload.id; // Remove id from payload
+      
+      const requiredKeys = ['name','gender','roll','password','course','branch','year','role','status','mobileno','email_id','aadhar_no','address'];
+      const missing = requiredKeys.filter(k => !payload[k]);
+      if (missing.length) {
+        alert('Please fill all required fields: ' + missing.join(', '));
+        return;
+      }
+      
+      try {
+        const res = await fetch(`/api/admin/students/${studentId}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
+          cache: 'no-cache',
+          body: JSON.stringify(payload)
+        });
+        
+        const data = await res.json();
+        if (!res.ok || !data.success) {
+          alert(data.error || 'Failed to update student');
+          return;
+        }
+        
+        alert('Student updated successfully!');
+        
+        // Close modal after successful update
+        setTimeout(() => {
+          document.getElementById('editModal').classList.add('hidden');
+          // Refresh the students list
+          loadStudents();
+          // Refresh branch counts
+          loadBranches();
+        }, 1000);
+        
+      } catch (err) {
+        alert('Server error occurred');
+      }
+    }
+
+    function closeEditModal() {
+      document.getElementById('editModal').classList.add('hidden');
+      document.getElementById('editStudentForm').reset();
+      document.getElementById('editStatusMessage').textContent = '';
+    }
+
+    function formToJSON(form) {
+      const data = new FormData(form);
+      const obj = {};
+      for (const [k, v] of data.entries()) obj[k] = v;
+      return obj;
+    }
+
+    async function createStudent(e) {
+      e.preventDefault();
+      const form = document.getElementById('createStudentForm');
+      const payload = formToJSON(form);
+      Object.keys(payload).forEach(k => {
+        if (typeof payload[k] === 'string') payload[k] = payload[k].trim();
+      });
+
+      // Require all fields
+      const requiredKeys = ['name','gender','roll','password','course','branch','year','role','status','mobileno','email_id','aadhar_no','address'];
+      const missing = requiredKeys.filter(k => !payload[k]);
+      if (missing.length) {
+        alert('Please fill all required fields: ' + missing.join(', '));
+        return;
+      }
+
+      // Name validation: only letters and spaces
+      if (!/^[A-Za-z ]+$/.test(payload.name)) {
+        alert('Name should contain only letters and spaces.');
+        return;
+      }
+
+      // Mobile validation: exactly 10 digits
+      if (!/^\d{10}$/.test(payload.mobileno)) {
+        alert('Mobile number must be exactly 10 digits.');
+        return;
+      }
+
+      // Aadhar validation: exactly 12 digits
+      if (!/^\d{12}$/.test(payload.aadhar_no)) {
+        alert('Aadhar number must be exactly 12 digits.');
+        return;
+      }
+
+      try {
+        const res = await fetch('/api/admin/students', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
+          cache: 'no-cache',
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if (!res.ok || !data.success) {
+          alert(data.error || 'Failed to create student');
+          return;
+        }
+        alert('Student created successfully!');
+        form.reset();
+        // refresh list to show newest students
+        currentOffset = 0;
+        await loadStudents();
+        await loadStats();
+      } catch (err) {
+        alert('Server error occurred');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      const ok = await ensureAdmin();
+      if (!ok) return;
+      await loadStats();
+      await loadBranches();
+      // ...existing code...
+      document.getElementById('searchBtn').addEventListener('click', () => {
+        currentQuery = document.getElementById('searchInput').value.trim();
+        currentOffset = 0;
+        loadStudents();
+      });
+      document.getElementById('searchInput').addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          currentQuery = document.getElementById('searchInput').value.trim();
+          currentOffset = 0;
+          loadStudents();
+        }
+      });
+      document.getElementById('prevBtn').addEventListener('click', () => {
+        currentOffset = Math.max(0, currentOffset - pageSize);
+        loadStudents();
+      });
+      document.getElementById('nextBtn').addEventListener('click', () => {
+        currentOffset = currentOffset + pageSize;
+        loadStudents();
+      });
+      document.getElementById('createStudentForm').addEventListener('submit', createStudent);
+      // Year pill clicks
+      document.querySelectorAll('.year-pill').forEach((pill) => {
+        pill.addEventListener('click', () => {
+          const year = pill.getAttribute('data-year');
+          selectedYear = year;
+          document.querySelectorAll('.year-pill').forEach(p => {
+            p.classList.remove('bg-blue-600','text-white');
+            p.classList.add('border');
+          });
+          pill.classList.add('bg-blue-600','text-white');
+          pill.classList.remove('border');
+          currentOffset = 0;
+          loadStudents();
+          // Refresh year counts to ensure accuracy
+          if (selectedBranch) {
+            loadYearCounts(selectedBranch);
+          }
+        });
+      });
+      // Edit modal close button
+      document.getElementById('closeEditModal').addEventListener('click', closeEditModal);
+      document.getElementById('editStudentForm').addEventListener('submit', updateStudent);
+      // Close modal when clicking outside
+      document.getElementById('editModal').addEventListener('click', (e) => {
+        if (e.target.id === 'editModal') {
+          closeEditModal();
+        }
+      });
+    });
+    async function updateStudent(e) {
+      e.preventDefault();
+      const form = document.getElementById('editStudentForm');
+      const statusEl = document.getElementById('editStatusMessage');
+      statusEl.textContent = '';
+      
+      const formData = new FormData(form);
+      const payload = {};
+      for (const [k, v] of formData.entries()) {
+        payload[k] = v && typeof v === 'string' ? v.trim() : v;
+      }
+      
+      const studentId = payload.id;
+      delete payload.id; // Remove id from payload
+      
+      const requiredKeys = ['name','gender','roll','password','course','branch','year','role','status','mobileno','email_id','aadhar_no','address'];
+      const missing = requiredKeys.filter(k => !payload[k]);
+      if (missing.length) {
+        alert('Please fill all required fields: ' + missing.join(', '));
+        return;
+      }
+
+      // Name validation: only letters and spaces
+      if (!/^[A-Za-z ]+$/.test(payload.name)) {
+        alert('Name should contain only letters and spaces.');
+        return;
+      }
+
+      // Mobile validation: exactly 10 digits
+      if (!/^\d{10}$/.test(payload.mobileno)) {
+        alert('Mobile number must be exactly 10 digits.');
+        return;
+      }
+
+      // Aadhar validation: exactly 12 digits
+      if (!/^\d{12}$/.test(payload.aadhar_no)) {
+        alert('Aadhar number must be exactly 12 digits.');
+        return;
+      }
+
+      try {
+        const res = await fetch(`/api/admin/students/${studentId}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
+          cache: 'no-cache',
+          body: JSON.stringify(payload)
+        });
+        
+        const data = await res.json();
+        if (!res.ok || !data.success) {
+          alert(data.error || 'Failed to update student');
+          return;
+        }
+        
+        alert('Student updated successfully!');
+        
+        // Close modal after successful update
+        setTimeout(() => {
+          document.getElementById('editModal').classList.add('hidden');
+          // Refresh the students list
+          loadStudents();
+          // Refresh branch counts
+          loadBranches();
+        }, 1000);
+        
+      } catch (err) {
+        alert('Server error occurred');
+      }
+    }
+          
+  </script>
+</body>
+</html>
+

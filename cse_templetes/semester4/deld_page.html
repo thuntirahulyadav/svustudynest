@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Digital Electronics and Logic Design - SVUSTUDYNEST</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    div {
+      font-family: 'Poppins', sans-serif;
+    }      
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .tab-button.active {
+      background-color: #1877F2;
+      color: white;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <nav class="w-full flex items-center justify-between px-6 md:px-16 py-4 bg-white shadow-md fixed top-0 left-0 z-10" style="box-shadow: 0 4px 16px 0 rgba(59,130,246,0.15), 0 1.5px 6px 0 rgba(59,130,246,0.10);">
+    <span class="text-2xl md:text-3xl font-extrabold text-blue-600 tracking-tight" style="text-shadow: 0 2px 8px rgba(59,130,246,0.35), 0 1px 1px rgba(59,130,246,0.25);">
+      <a href="semester4.html" class="text-blue-600 font-semibold hover:underline">&larr;&nbsp;</a>SVUSTUDYNEST</span>
+      <div class="relative">
+  <button id="profileBtn" 
+    class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center shadow hover:bg-blue-700 transition">
+        <i class="fa fa-user text-2xl text-white"></i>
+  </button>
+      </div>
+    </nav>
+    
+  <div class="flex-1 pt-24 px-6 sm:px-10 md:px-16 lg:px-32 xl:px-40">
+    <h1 class="text-3xl font-bold text-blue-700 mb-6">Digital Electronics and Logic Design - Complete Resources</h1>
+    <div class="bg-white shadow-md rounded-xl p-4 mb-8">
+      <div class="flex flex-wrap gap-2 justify-center">
+        <button class="tab-button active px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit1')">Unit 1: Number Representation & Boolean Algebra</button>
+        <button class="tab-button px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit2')">Unit 2: MSI Devices & Adders</button>
+        <button class="tab-button px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit3')">Unit 3: Sequential Logic Design</button>
+        <button class="tab-button px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit4')">Unit 4: Logic Families & Memories</button>
+        <button class="tab-button px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit5')">Unit 5: VLSI Design Flow</button>
+      </div>
+    </div>
+    <div id="unit1" class="tab-content active">
+      <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 1: Number Representation & Boolean Algebra</h2>
+        <p class="text-gray-700 mb-6 leading-relaxed">Number Representation, Signed and Unsigned, Code Conversion, Review of Boolean Algebra and DeMorgan’s Theorem, Sum-of-Product and Product-of-Sum forms, Canonical forms, Karnaugh maps up to 6 variables.</p>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered:</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Number systems and conversions</li>
+            <li>Boolean algebra & DeMorgan’s Theorem</li>
+            <li>Karnaugh maps</li>
+            <li>Canonical forms</li>
+          </ul>
+          <br>
+          <div class="flex gap-4 mb-6">
+            <a href="del_unit1_notes.pdf" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700">📄 View PDF</a>
+            <a href="del_unit1_notes.pdf" download class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700">⬇️ Download PDF</a>
+          </div>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions</h3>
+          <ul class="list-decimal list-inside text-gray-700 space-y-2">
+            <li>Explain signed and unsigned number representation.</li>
+            <li>Describe the use of Karnaugh maps for simplification.</li>
+            <li>State and prove DeMorgan’s Theorem.</li>
+            <li>Discuss canonical forms in Boolean algebra.</li>
+          </ul>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos to Understand Easily</h3>
+          <div class="space-y-6">
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">1. Number Representation & Boolean Algebra</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/1delNumber" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/2delKarnaugh" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="unit2" class="tab-content">
+      <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 2: MSI Devices & Adders</h2>
+        <p class="text-gray-700 mb-6 leading-relaxed">MSI devices like Comparators, Multiplexers, Encoder, Decoder, Driver & Multiplexed Display, Half and Full Adders, Subtractors, Serial and Parallel Adders, BCD Adder, Barrel shifter and ALU.</p>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered:</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>MSI devices: Comparators, Multiplexers, Encoders, Decoders</li>
+            <li>Drivers & multiplexed display</li>
+            <li>Adders & subtractors</li>
+            <li>BCD adder, barrel shifter, ALU</li>
+          </ul>
+          <br>
+          <div class="flex gap-4 mb-6">
+            <a href="del_unit2_notes.pdf" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700">📄 View PDF</a>
+            <a href="del_unit2_notes.pdf" download class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700">⬇️ Download PDF</a>
+          </div>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions</h3>
+          <ul class="list-decimal list-inside text-gray-700 space-y-2">
+            <li>Explain the working of multiplexers and decoders.</li>
+            <li>Describe the function of ALU and barrel shifter.</li>
+            <li>Discuss the design of BCD adder.</li>
+            <li>Compare half and full adders.</li>
+          </ul>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos to Understand Easily</h3>
+          <div class="space-y-6">
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">1. MSI Devices & Adders</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/3delMSI" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/4delAdders" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="unit3" class="tab-content">
+      <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 3: Sequential Logic Design</h2>
+        <p class="text-gray-700 mb-6 leading-relaxed">Sequential Logic Design: Building blocks like S-R, JK and Master-Slave JK FF, Edge triggered FF, Ripple and Synchronous counters, Shift registers, Finite state machines, Design of synchronous FSM, Algorithmic State Machines charts. Designing synchronous circuits like Pulse train generator, PseudoRandom Binary Sequence generator, Clock generation.</p>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered:</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Flip-flops: S-R, JK, Master-Slave JK, Edge triggered</li>
+            <li>Counters: Ripple, Synchronous</li>
+            <li>Shift registers</li>
+            <li>Finite state machines & ASM charts</li>
+            <li>Pulse train generator, PRBS generator, Clock generation</li>
+          </ul>
+          <br>
+          <div class="flex gap-4 mb-6">
+            <a href="del_unit3_notes.pdf" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700">📄 View PDF</a>
+            <a href="del_unit3_notes.pdf" download class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700">⬇️ Download PDF</a>
+          </div>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions</h3>
+          <ul class="list-decimal list-inside text-gray-700 space-y-2">
+            <li>Explain the operation of JK and Master-Slave JK flip-flops.</li>
+            <li>Describe synchronous and ripple counters.</li>
+            <li>Discuss the design of finite state machines.</li>
+            <li>Explain pulse train and PRBS generators.</li>
+          </ul>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos to Understand Easily</h3>
+          <div class="space-y-6">
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">1. Sequential Logic Design</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/5delSeqLogic" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/6delFSM" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="unit4" class="tab-content">
+      <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 4: Logic Families & Memories</h2>
+        <p class="text-gray-700 mb-6 leading-relaxed">Logic Families and Semiconductor Memories: TTL NAND gate, Specifications, Noise margin, Propagation delay, fan-in, fan-out, Tristate TTL, ECL, CMOS families and their interfacing, Memory elements, Concept of Programmable logic devices like FPGA. Logic implementation using Programmable Devices.</p>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered:</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>TTL NAND gate, ECL, CMOS families</li>
+            <li>Specifications: noise margin, delay, fan-in, fan-out</li>
+            <li>Memory elements</li>
+            <li>Programmable logic devices: FPGA</li>
+            <li>Logic implementation</li>
+          </ul>
+          <br>
+          <div class="flex gap-4 mb-6">
+            <a href="del_unit4_notes.pdf" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700">📄 View PDF</a>
+            <a href="del_unit4_notes.pdf" download class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700">⬇️ Download PDF</a>
+          </div>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions</h3>
+          <ul class="list-decimal list-inside text-gray-700 space-y-2">
+            <li>Explain TTL NAND gate and its specifications.</li>
+            <li>Describe CMOS and ECL families and their interfacing.</li>
+            <li>Discuss memory elements and programmable logic devices.</li>
+            <li>Explain logic implementation using FPGA.</li>
+          </ul>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos to Understand Easily</h3>
+          <div class="space-y-6">
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">1. Logic Families & Memories</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/7delLogic" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/8delFPGA" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="unit5" class="tab-content">
+      <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 5: VLSI Design Flow</h2>
+        <p class="text-gray-700 mb-6 leading-relaxed">VLSI Design flow: Design entry: Schematic, FSM & HDL, different modeling styles in VHDL, Data types and objects, Dataflow, Behavioral and Structural Modeling, Synthesis and Simulation VHDL constructs and codes for combinational and sequential circuits.</p>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered:</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>VLSI design entry: Schematic, FSM, HDL</li>
+            <li>Modeling styles in VHDL</li>
+            <li>Data types, objects, dataflow, behavioral, structural modeling</li>
+            <li>Synthesis and simulation constructs</li>
+          </ul>
+          <br>
+          <div class="flex gap-4 mb-6">
+            <a href="del_unit5_notes.pdf" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700">📄 View PDF</a>
+            <a href="del_unit5_notes.pdf" download class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700">⬇️ Download PDF</a>
+          </div>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions</h3>
+          <ul class="list-decimal list-inside text-gray-700 space-y-2">
+            <li>Explain VLSI design flow and entry methods.</li>
+            <li>Describe modeling styles in VHDL.</li>
+            <li>Discuss synthesis and simulation constructs.</li>
+            <li>Write VHDL code for combinational/sequential circuits.</li>
+          </ul>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos to Understand Easily</h3>
+          <div class="space-y-6">
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">1. VLSI Design Flow</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/9delVLSI" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/10delVHDL" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+      <h2 class="text-2xl font-bold text-blue-700 mb-4">Course Outcomes</h2>
+      <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
+        <li>Design and analyze combinational logic circuits</li>
+        <li>Design and analyze synchronous sequential logic circuits</li>
+        <li>Design and implement complicated digital systems using Verilog</li>
+        <li>Design a VLSI circuit for an application</li>
+      </ul>
+      <h3 class="text-xl font-semibold text-blue-700 mb-3">Text/Reference Books</h3>
+      <ol class="list-decimal list-inside text-gray-700 space-y-2">
+        <li>R.P. Jain, "Modern digital Electronics", Tata McGraw Hill, 4th edition, 2010.</li>
+        <li>Douglas Perry, "VHDL: Programming by Example", Tata McGraw Hill, 4th edition.</li>
+        <li>Brown S, and Vranesic Z, Fundamentals of Digital Logic with VHDL Design, 3rd edition, McGraw Hill, 2012.</li>
+        <li>Kinney L L, and Roth Jr. C H, Fundamentals of Logic Design, 7th edition, Cengage Learning, 2015.</li>
+      </ol>
+    </div>
+  </div>
+  <footer class="bg-gray-900 text-white py-12 mt-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="col-span-1 md:col-span-2">
+                <h3 class="text-2xl font-bold mb-4">SVUSTUDYNEST</h3>
+                <p class="text-gray-400">A platform for study resources for SVU students</p>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                  <li><a href="/templetes/csedashboard.html" class="text-gray-400 hover:text-white">Home</a></li>
+                  <li><a href="semester4.html" class="text-gray-400 hover:text-white">Subjects</a></li>
+                  <li><a href="/templetes/login.html" class="text-gray-400 hover:text-white">Login</a></li>
+                </ul>
+            </div>
+            <div class="grid grid-cols-2 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 id="footer-contact" class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li><a href="mailto:support@svustudynest.com" class="text-gray-400 hover:text-white">support@svustudynest.com</a></li>
+                      <li><a href="mailto:info@svustudynest.com" class="text-gray-400 hover:text-white">info@svustudynest.com</a></li>
+                      <li><a href="mailto:help@svustudynest.com" class="text-gray-400 hover:text-white">help@svustudynest.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+            <p class="text-gray-400"> &copy; 2024 SVUSTUDYNEST. Sri Venkateswara University.</p>
+        </div>
+    </div>
+</footer>
+  <script src="../auth.js"></script>
+  <script>
+    function showTab(unitId) {
+      const tabContents = document.querySelectorAll('.tab-content');
+      tabContents.forEach(content => { content.classList.remove('active'); });
+      const tabButtons = document.querySelectorAll('.tab-button');
+      tabButtons.forEach(button => { button.classList.remove('active'); });
+      document.getElementById(unitId).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+  <div id="profileOverlay" class="fixed inset-0 z-50 hidden">
+    <div class="absolute inset-0 bg-black bg-opacity-30" onclick="closeProfilePanel()"></div>
+    <div id="profilePanel" class="absolute top-0 right-0 w-80 max-w-full h-full bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col border-l border-blue-300 rounded-l-xl">
+      <div class="flex justify-between items-center px-6 py-4 border-b bg-blue-100 shadow-sm rounded-tl-xl">
+        <h2 class="text-xl font-extrabold text-blue-700">Your Profile</h2>
+        <button onclick="closeProfilePanel()" class="text-3xl font-bold text-blue-700 hover:text-blue-900 transition-transform duration-50 ease-in-out active:scale-95">&times;</button>
+      </div>
+      <div class="p-5 flex-1 overflow-y-auto text-sm text-gray-700 space-y-3">
+        <p><strong class="text-lg">Name:</strong><br> <span id="p_name" class="text-base"></span></p>
+        <p><strong class="text-lg">Roll No:</strong><br> <span id="p_roll" class="text-base"></span></p>
+        <p><strong class="text-lg">Gender:</strong><br> <span id="p_gender" class="text-base"></span></p>
+        <p><strong class="text-lg">Course:</strong><br> <span id="p_course" class="text-base"></span></p>
+        <p><strong class="text-lg">Branch:</strong><br> <span id="p_branch" class="text-base"></span></p>
+        <p><strong class="text-lg">Email:</strong><br> <span id="p_email" class="text-base"></span></p>
+        <p><strong class="text-lg">Mobile:</strong><br> <span id="p_mobile" class="text-base"></span></p>
+        <p><strong class="text-lg">Address:</strong><br> <span id="p_address" class="text-base"></span></p>
+      </div>
+      <div class="px-6 py-4 border-t bg-gray-50">
+        <button id="logoutBtn" class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-600 transition-transform duration-50 ease-in-out active:scale-95">Logout</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    const profileBtn = document.getElementById('profileBtn');
+    const profileOverlay = document.getElementById('profileOverlay');
+    const profilePanel = document.getElementById('profilePanel');
+    profileBtn.addEventListener('click', async () => {
+      profileOverlay.classList.remove('hidden');
+      profilePanel.classList.remove('translate-x-full');
+      const res = await fetch('/check-auth');
+      const { student_roll } = await res.json();
+      const student = await fetch(`/api/student/${student_roll}`);
+      const data = await student.json();
+      document.getElementById('p_name').textContent = data.name;
+      document.getElementById('p_roll').textContent = data.roll;
+      document.getElementById('p_gender').textContent = data.gender || '-';
+      document.getElementById('p_course').textContent = data.course || '-';
+      document.getElementById('p_branch').textContent = data.branch || '-';
+      document.getElementById('p_email').textContent = data.email_id || '-';
+      document.getElementById('p_mobile').textContent = data.mobileno || '-';
+      document.getElementById('p_address').textContent = data.address || '-';
+    });
+    function closeProfilePanel() {
+      profilePanel.classList.add('translate-x-full');
+      setTimeout(() => { profileOverlay.classList.add('hidden'); }, 300);
+    }
+    window.addEventListener('keydown', e => { if (e.key === 'Escape') closeProfilePanel(); });
+  </script>
+</body>
+</html>

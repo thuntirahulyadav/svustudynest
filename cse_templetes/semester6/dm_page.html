@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Data Mining - Complete Course - SVUSTUDYNEST</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    div { font-family: 'Poppins', sans-serif; }
+    body { font-family: 'Montserrat', sans-serif; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .tab-button.active { background-color: #1877F2; color: white; }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col">
+  <!-- Navbar -->
+  <nav class="w-full flex items-center justify-between px-6 md:px-16 py-4 bg-white shadow-md fixed top-0 left-0 z-10" style="box-shadow: 0 4px 16px 0 rgba(59,130,246,0.15), 0 1.5px 6px 0 rgba(59,130,246,0.10);">
+    <span class="text-2xl md:text-3xl font-extrabold text-blue-600 tracking-tight" style="text-shadow: 0 2px 8px rgba(59,130,246,0.35), 0 1px 1px rgba(59,130,246,0.25);">
+      <a href="semester6.html" class="text-blue-600 font-semibold hover:underline">&larr;&nbsp;</a>SVUSTUDYNEST</span>
+    <div class="relative">
+      <button id="profileBtn" class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center shadow hover:bg-blue-700 transition">
+        <i class="fa fa-user text-2xl text-white"></i>
+      </button>
+    </div>
+  </nav>
+  <!-- Content -->
+  <div class="flex-1 pt-24 px-6 sm:px-10 md:px-16 lg:px-32 xl:px-40">
+    <h1 class="text-3xl font-bold mb-6">Data Mining - Complete Resources</h1>
+    <!-- Unit Navigation Tabs -->
+    <div class="bg-white shadow-md rounded-xl p-4 mb-8">
+      <div class="flex flex-wrap gap-2 justify-center">
+        <button class="tab-button active px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit1')">Unit 1: Introduction & Preprocessing</button>
+        <button class="tab-button px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit2')">Unit 2: Data Warehousing</button>
+        <button class="tab-button px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit3')">Unit 3: Pattern Mining & Classification</button>
+        <button class="tab-button px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit4')">Unit 4: Advanced Classification & Clustering</button>
+        <button class="tab-button px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit5')">Unit 5: Advanced Clustering & Trends</button>
+      </div>
+    </div>
+    <!-- UNIT 1 -->
+    <div id="unit1" class="tab-content active">
+      <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 1: Introduction & Data Preprocessing</h2>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered:</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Why Data Mining? What Is Data Mining? What Kinds of Data Can Be Mined?</li>
+            <li>What Kinds of Patterns Can Be Mined? Technologies Used, Targeted Applications</li>
+            <li>Major Issues in Data Mining</li>
+            <li>Data Objects and Attribute Types, Statistical Descriptions, Data Visualization</li>
+            <li>Measuring Data Similarity and Dissimilarity</li>
+            <li>Data Preprocessing: Overview, Data Cleaning, Data Integration, Data Reduction, Data Transformation, Data Discretization</li>
+          </ul>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions</h3>
+          <ul class="list-decimal list-inside text-gray-700 space-y-2">
+            <li>Explain the principles of data warehousing and data mining.</li>
+            <li>Describe the architecture of a data mining system.</li>
+            <li>What are the major issues in data mining?</li>
+            <li>Discuss data preprocessing techniques and their importance.</li>
+            <li>How is data similarity and dissimilarity measured?</li>
+          </ul>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos to Understand Easily</h3>
+          <div class="space-y-6">
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">1. Introduction & Data Preprocessing</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/1JkFQ1u2WfY" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/2JkFQ1u2WfY" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- UNIT 2 -->
+    <div id="unit2" class="tab-content">
+      <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 2: Data Warehousing & OLAP</h2>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered:</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>DataWarehouse: Basic Concepts, Modeling, Data Cube, OLAP</li>
+            <li>Design and Usage, Implementation, Data Generalization by Attribute-Oriented Induction</li>
+            <li>Data Cube Computation, Processing Advanced Queries, Multidimensional Data Analysis in Cube Space</li>
+          </ul>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions</h3>
+          <ul class="list-decimal list-inside text-gray-700 space-y-2">
+            <li>Explain basic concepts of data warehousing.</li>
+            <li>Describe OLAP and its applications.</li>
+            <li>What is attribute-oriented induction?</li>
+            <li>Discuss data cube computation methods.</li>
+            <li>How is multidimensional data analyzed in cube space?</li>
+          </ul>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos to Understand Easily</h3>
+          <div class="space-y-6">
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">1. Data Warehousing & OLAP</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/3JkFQ1u2WfY" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/4JkFQ1u2WfY" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- UNIT 3 -->
+    <div id="unit3" class="tab-content">
+      <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 3: Pattern Mining & Classification</h2>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered:</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Mining Frequent Patterns, Associations, Correlations, Frequent Itemset Mining</li>
+            <li>Pattern Evaluation, Advanced Pattern Mining, Constraint-Based Mining, High-Dimensional Data</li>
+            <li>Classification: Decision Tree Induction, Bayes Classification, Rule-Based Classification, Model Evaluation, Techniques to Improve Accuracy</li>
+          </ul>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions</h3>
+          <ul class="list-decimal list-inside text-gray-700 space-y-2">
+            <li>Explain frequent pattern mining and its applications.</li>
+            <li>Describe decision tree induction for classification.</li>
+            <li>What is constraint-based frequent pattern mining?</li>
+            <li>Discuss model evaluation and selection in classification.</li>
+            <li>How can classification accuracy be improved?</li>
+          </ul>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos to Understand Easily</h3>
+          <div class="space-y-6">
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">1. Pattern Mining & Classification</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/5JkFQ1u2WfY" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/6JkFQ1u2WfY" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- UNIT 4 -->
+    <div id="unit4" class="tab-content">
+      <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 4: Advanced Classification & Clustering</h2>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered:</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Classification-Advanced: Bayesian Networks, Backpropagation, SVM, Frequent Patterns, Lazy Learners</li>
+            <li>Other Classification Methods, Additional Topics</li>
+            <li>Cluster Analysis: Partitioning, Hierarchical, Density-Based, Grid-Based, Evaluation of Clustering</li>
+          </ul>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions</h3>
+          <ul class="list-decimal list-inside text-gray-700 space-y-2">
+            <li>Explain Bayesian belief networks in classification.</li>
+            <li>Describe support vector machines and their applications.</li>
+            <li>What are lazy learners in classification?</li>
+            <li>Discuss hierarchical and density-based clustering methods.</li>
+            <li>How is clustering evaluated?</li>
+          </ul>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos to Understand Easily</h3>
+          <div class="space-y-6">
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">1. Advanced Classification & Clustering</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/7JkFQ1u2WfY" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/8JkFQ1u2WfY" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- UNIT 5 -->
+    <div id="unit5" class="tab-content">
+      <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 5: Advanced Clustering & Data Mining Trends</h2>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered:</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Advanced Cluster Analysis: Probabilistic, High-Dimensional, Graph & Network Data, Constraints</li>
+            <li>Outlier Detection: Outlier Analysis, Detection Methods, Statistical & Proximity-Based Approaches</li>
+            <li>Clustering-Based Approaches, Classification-Based Approaches, Mining Contextual & Collective Outliers</li>
+            <li>Overview of Data Mining Trends, Research Frontiers, Applications, Data Mining in Society</li>
+          </ul>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions</h3>
+          <ul class="list-decimal list-inside text-gray-700 space-y-2">
+            <li>Explain probabilistic model-based clustering.</li>
+            <li>Describe outlier detection methods in data mining.</li>
+            <li>What are clustering-based and classification-based approaches?</li>
+            <li>Discuss data mining trends and research frontiers.</li>
+            <li>How is data mining applied in society?</li>
+          </ul>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos to Understand Easily</h3>
+          <div class="space-y-6">
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">1. Advanced Clustering & Data Mining Trends</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/9JkFQ1u2WfY" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/10JkFQ1u2WfY" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Text Books & References -->
+    <div class="bg-white shadow rounded-lg p-4 mt-4">
+      <h2 class="text-lg font-semibold text-blue-600 mb-2">Text Books</h2>
+      <ul class="list-disc ml-6 text-gray-700">
+        <li>Jiawei Han, Micheline Kamber and Jian Pei, Data Mining: Concepts and Techniques, 3rd Edition, Morgan Kaufmann Publishers, Elsevier, 2012.</li>
+      </ul>
+      <h2 class="text-lg font-semibold text-blue-600 mt-2 mb-2">Reference Books</h2>
+      <ul class="list-disc ml-6 text-gray-700">
+        <li>Jiawei Han and Micheline Kamber, Data Mining: Concepts and Techniques, 2nd Edition, Morgan Kaufmann Publishers, Elsevier, 2006.</li>
+      </ul>
+    </div>
+  </div>
+  <!-- Footer -->
+ <footer class="bg-gray-900 text-white py-12 mt-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="col-span-1 md:col-span-2">
+              <h3 class="text-2xl font-bold mb-4">SVUSTUDYNEST</h3>
+              <p class="text-gray-400">A platform for study resources for SVU students</p>
+          </div>
+          <div>
+              <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+              <ul class="space-y-2">
+                <li><a href="/templetes/csedashboard.html" class="text-gray-400 hover:text-white">Home</a></li>
+                <li><a href="semester6.html" class="text-gray-400 hover:text-white">Subjects</a></li>
+                <li><a href="/templetes/login.html" class="text-gray-400 hover:text-white">Login</a></li>
+              </ul>
+          </div>
+          <div class="grid grid-cols-2 gap-8">
+              <div>
+                  <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                  <ul class="space-y-2">
+                      <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                      <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                  </ul>
+              </div>
+              <div>
+                  <h4 id="footer-contact" class="text-lg font-semibold mb-4">Contact</h4>
+                  <ul class="space-y-2">
+                      <li><a href="mailto:support@svustudynest.com" class="text-gray-400 hover:text-white">support@svustudynest.com</a></li>
+                      <li><a href="mailto:info@svustudynest.com" class="text-gray-400 hover:text-white">info@svustudynest.com</a></li>
+                      <li><a href="mailto:help@svustudynest.com" class="text-gray-400 hover:text-white">help@svustudynest.com</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+          <p class="text-gray-400"> &copy; 2024 SVUSTUDYNEST. Sri Venkateswara University.</p>
+      </div>
+  </div>
+</footer>
+<!-- Include common authentication script -->
+<script src="../auth.js"></script>
+<!-- Tab Navigation Script -->
+<script>
+  function showTab(unitId) {
+    // Hide all tab contents
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabContents.forEach(content => {
+      content.classList.remove('active');
+    });
+    // Remove active class from all tab buttons
+    const tabButtons = document.querySelectorAll('.tab-button');
+    tabButtons.forEach(button => {
+      button.classList.remove('active');
+    });
+    // Show selected tab content
+    document.getElementById(unitId).classList.add('active');
+    // Add active class to clicked button
+    event.target.classList.add('active');
+  }
+</script>
+<!-- Slide-out Profile Overlay -->
+<div id="profileOverlay" class="fixed inset-0 z-50 hidden">
+<div class="absolute inset-0 bg-black bg-opacity-30" onclick="closeProfilePanel()"></div>
+<!-- Slide-out Profile Panel -->
+<div id="profilePanel" class="absolute top-0 right-0 w-80 max-w-full h-full bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col border-l border-blue-300 rounded-l-xl">
+  <div class="flex justify-between items-center px-6 py-4 border-b bg-blue-100 shadow-sm rounded-tl-xl">
+    <h2 class="text-xl font-extrabold text-blue-700">Your Profile</h2>
+    <button onclick="closeProfilePanel()" class="text-3xl font-bold text-blue-700 hover:text-blue-900 transition-transform duration-50 ease-in-out active:scale-95">&times;</button>
+  </div>
+  <div class="p-5 flex-1 overflow-y-auto text-sm text-gray-700 space-y-3">
+    <p><strong class="text-lg">Name:</strong><br> <span id="p_name" class="text-base"></span></p>
+    <p><strong class="text-lg">Roll No:</strong><br> <span id="p_roll" class="text-base"></span></p>
+    <p><strong class="text-lg">Gender:</strong><br> <span id="p_gender" class="text-base"></span></p>
+    <p><strong class="text-lg">Course:</strong><br> <span id="p_course" class="text-base"></span></p>
+    <p><strong class="text-lg">Branch:</strong><br> <span id="p_branch" class="text-base"></span></p>
+    <p><strong class="text-lg">Email:</strong><br> <span id="p_email" class="text-base"></span></p>
+    <p><strong class="text-lg">Mobile:</strong><br> <span id="p_mobile" class="text-base"></span></p>
+    <p><strong class="text-lg">Address:</strong><br> <span id="p_address" class="text-base"></span></p>
+  </div>
+  <div class="px-6 py-4 border-t bg-gray-50">
+    <button id="logoutBtn" class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-600 transition-transform duration-50 ease-in-out active:scale-95">Logout</button>
+  </div>
+</div>
+</div>
+<script>
+const profileBtn = document.getElementById('profileBtn');
+const profileOverlay = document.getElementById('profileOverlay');
+const profilePanel = document.getElementById('profilePanel');
+profileBtn.addEventListener('click', async () => {
+  profileOverlay.classList.remove('hidden');
+  profilePanel.classList.remove('translate-x-full');
+  const res = await fetch('/check-auth');
+  const { student_roll } = await res.json();
+  const student = await fetch(`/api/student/${student_roll}`);
+  const data = await student.json();
+  document.getElementById('p_name').textContent = data.name;
+  document.getElementById('p_roll').textContent = data.roll;
+  document.getElementById('p_gender').textContent = data.gender || '-';
+  document.getElementById('p_course').textContent = data.course || '-';
+  document.getElementById('p_branch').textContent = data.branch || '-';
+  document.getElementById('p_email').textContent = data.email_id || '-';
+  document.getElementById('p_mobile').textContent = data.mobileno || '-';
+  document.getElementById('p_address').textContent = data.address || '-';
+});
+function closeProfilePanel() {
+  profilePanel.classList.add('translate-x-full');
+  setTimeout(() => {
+    profileOverlay.classList.add('hidden');
+  }, 300);
+}
+window.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeProfilePanel();
+});
+</script>
+</body>
+</html>

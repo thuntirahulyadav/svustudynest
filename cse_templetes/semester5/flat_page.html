@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Formal Languages and Automata Theory - SVUSTUDYNEST</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    div {
+      font-family: 'Poppins', sans-serif;
+    }      
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .tab-button.active {
+      background-color: #1877F2;
+      color: white;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <nav class="w-full flex items-center justify-between px-6 md:px-16 py-4 bg-white shadow-md fixed top-0 left-0 z-10" style="box-shadow: 0 4px 16px 0 rgba(59,130,246,0.15), 0 1.5px 6px 0 rgba(59,130,246,0.10);">
+    <span class="text-2xl md:text-3xl font-extrabold text-blue-600 tracking-tight" style="text-shadow: 0 2px 8px rgba(59,130,246,0.35), 0 1px 1px rgba(59,130,246,0.25);">
+      <a href="semester5.html" class="text-blue-600 font-semibold hover:underline">&larr;&nbsp;</a>SVUSTUDYNEST</span>
+      <div class="relative">
+  <button id="profileBtn" 
+    class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center shadow hover:bg-blue-700 transition">
+        <i class="fa fa-user text-2xl text-white"></i>
+  </button>
+      </div>
+    </nav>
+    
+  <div class="flex-1 pt-24 px-6 sm:px-10 md:px-16 lg:px-32 xl:px-40">
+    <h1 class="text-3xl font-bold  mb-6">Formal Languages and Automata Theory - Complete Resources</h1>
+    <div class="bg-white shadow-md rounded-xl p-4 mb-8">
+      <div class="flex flex-wrap gap-2 justify-center">
+        <button class="tab-button active px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit1')">Unit 1: Automata Theory Basics</button>
+        <button class="tab-button px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit2')">Unit 2: Regular Languages & Expressions</button>
+        <button class="tab-button px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit3')">Unit 3: Context Free Grammars & PDA</button>
+        <button class="tab-button px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit4')">Unit 4: CFLs & Turing Machines</button>
+        <button class="tab-button px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit5')">Unit 5: Undecidability & Complexity</button>
+      </div>
+    </div>
+    <div id="unit1" class="tab-content active">
+      <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 1: Automata Theory Basics</h2>
+        <p class="text-gray-700 mb-6 leading-relaxed">Why study Automata Theory, Central Concepts of Automata Theory, Informal Picture of Finite Automata, Deterministic Finite Automata, Nondeterministic Finite Automata and Applications, Finite Automation with Epsilon Transitions.</p>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered:</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Automata Theory concepts</li>
+            <li>Finite Automata (DFA, NFA)</li>
+            <li>Epsilon transitions</li>
+            <li>Applications of Automata</li>
+          </ul>
+          <br>
+          <div class="flex gap-4 mb-6">
+            <a href="flats_unit1_notes.pdf" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700">📄 View PDF</a>
+            <a href="flats_unit1_notes.pdf" download class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700">⬇️ Download PDF</a>
+          </div>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions</h3>
+          <ul class="list-decimal list-inside text-gray-700 space-y-2">
+            <li>Explain the difference between DFA and NFA.</li>
+            <li>Describe epsilon transitions in automata.</li>
+            <li>Discuss applications of finite automata.</li>
+            <li>Why study automata theory?</li>
+          </ul>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos to Understand Easily</h3>
+          <div class="space-y-6">
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">Automata Theory & Finite Automata</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/1flatsAutomata" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/2flatsDFA" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="unit2" class="tab-content">
+      <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 2: Regular Languages & Expressions</h2>
+        <p class="text-gray-700 mb-6 leading-relaxed">Regular Expressions and their Applications, Finite Automata and Regular Expressions, Algebraic Laws for Regular Expressions. Properties of Regular Languages, Equivalence and Minimization of Automata.</p>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered:</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Regular expressions & applications</li>
+            <li>Algebraic laws for regular expressions</li>
+            <li>Properties of regular languages</li>
+            <li>Minimization of automata</li>
+          </ul>
+          <br>
+          <div class="flex gap-4 mb-6">
+            <a href="flats_unit2_notes.pdf" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700">📄 View PDF</a>
+            <a href="flats_unit2_notes.pdf" download class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700">⬇️ Download PDF</a>
+          </div>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions</h3>
+          <ul class="list-decimal list-inside text-gray-700 space-y-2">
+            <li>Explain regular expressions and their applications.</li>
+            <li>Discuss minimization of automata.</li>
+            <li>State algebraic laws for regular expressions.</li>
+            <li>Describe properties of regular languages.</li>
+          </ul>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos to Understand Easily</h3>
+          <div class="space-y-6">
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">Regular Languages & Automata</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/3flatsRegExp" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/4flatsMin" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="unit3" class="tab-content">
+      <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 3: Context Free Grammars & PDA</h2>
+        <p class="text-gray-700 mb-6 leading-relaxed">Context Free Grammars (CFG), Parse Trees, Applications of CFG, Ambiguity in Grammars and Languages. Definition of Pushdown Automaton, The Languages of a PDA, Equivalence of PDA’s and CFG’s, Deterministic Pushdown Automata.</p>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered:</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Context Free Grammars (CFG)</li>
+            <li>Parse trees & ambiguity</li>
+            <li>Pushdown Automata (PDA)</li>
+            <li>Equivalence of PDA and CFG</li>
+          </ul>
+          <br>
+          <div class="flex gap-4 mb-6">
+            <a href="flats_unit3_notes.pdf" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700">📄 View PDF</a>
+            <a href="flats_unit3_notes.pdf" download class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700">⬇️ Download PDF</a>
+          </div>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions</h3>
+          <ul class="list-decimal list-inside text-gray-700 space-y-2">
+            <li>Explain ambiguity in grammars and languages.</li>
+            <li>Describe pushdown automata and its languages.</li>
+            <li>Discuss equivalence of PDA and CFG.</li>
+            <li>Applications of context free grammars.</li>
+          </ul>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos to Understand Easily</h3>
+          <div class="space-y-6">
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">CFG & PDA</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/5flatsCFG" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/6flatsPDA" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="unit4" class="tab-content">
+      <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 4: CFLs & Turing Machines</h2>
+        <p class="text-gray-700 mb-6 leading-relaxed">Normal forms for CFG, Pumping Lemma for Context Free Languages, Closure and Decision Properties of CFLs. Turing Machine Model, Representation of Turing Machines, Language Acceptability by TM, Design of TMs, Universal Turing Machine, Halting Problem of TM, Church-Turing Thesis.</p>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered:</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Normal forms for CFG</li>
+            <li>Pumping Lemma for CFLs</li>
+            <li>Turing Machine Model</li>
+            <li>Universal Turing Machine & Halting Problem</li>
+          </ul>
+          <br>
+          <div class="flex gap-4 mb-6">
+            <a href="flats_unit4_notes.pdf" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700">📄 View PDF</a>
+            <a href="flats_unit4_notes.pdf" download class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700">⬇️ Download PDF</a>
+          </div>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions</h3>
+          <ul class="list-decimal list-inside text-gray-700 space-y-2">
+            <li>Explain the pumping lemma for CFLs.</li>
+            <li>Describe the Turing Machine model.</li>
+            <li>Discuss the halting problem and Church-Turing thesis.</li>
+            <li>Normal forms for CFG.</li>
+          </ul>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos to Understand Easily</h3>
+          <div class="space-y-6">
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">CFLs & Turing Machines</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/7flatsCFL" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/8flatsTM" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="unit5" class="tab-content">
+      <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 5: Undecidability & Complexity</h2>
+        <p class="text-gray-700 mb-6 leading-relaxed">A Language that is not Recursively Enumerable, An Undecidable Problem that is Recursively Enumerable, Undecidable Problems about Turing Machines, The Classes of P and NP, NP Complete Problem.</p>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered:</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Recursively enumerable & undecidable problems</li>
+            <li>Undecidable problems about TMs</li>
+            <li>P, NP, NP-Complete problems</li>
+          </ul>
+          <br>
+          <div class="flex gap-4 mb-6">
+            <a href="flats_unit5_notes.pdf" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700">📄 View PDF</a>
+            <a href="flats_unit5_notes.pdf" download class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700">⬇️ Download PDF</a>
+          </div>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions</h3>
+          <ul class="list-decimal list-inside text-gray-700 space-y-2">
+            <li>Explain recursively enumerable and undecidable problems.</li>
+            <li>Discuss NP and NP-Complete problems.</li>
+            <li>Describe undecidable problems about Turing Machines.</li>
+            <li>What is the halting problem?</li>
+          </ul>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos to Understand Easily</h3>
+          <div class="space-y-6">
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">Undecidability & Complexity</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/9flatsNP" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/10flatsUndecidable" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+      <h2 class="text-2xl font-bold text-blue-700 mb-4">Course Outcomes</h2>
+      <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
+        <li>Write a formal notation for strings, languages and machines.</li>
+        <li>Design finite automata to accept a set of strings of a language.</li>
+        <li>Determine whether the given language is regular or not.</li>
+        <li>Design context free grammars and pushdown automata for context free languages.</li>
+        <li>Design Turing machines for simple problems.</li>
+        <li>Understand the logical limits to computational capacity.</li>
+        <li>Get proper insight on undecidable problems.</li>
+      </ul>
+      <h3 class="text-xl font-semibold text-blue-700 mb-3">Text Books</h3>
+      <ol class="list-decimal list-inside text-gray-700 space-y-2">
+        <li>John E. Hopcroft, Rajeev Motwani and Jeffrey D. Ullman, Introduction to Automata Theory, Languages, and Computation, Pearson Education Asia.</li>
+        <li>Martin J C, Introduction to Languages and the Theory of Computation, 3rd edition, Tata McGraw-Hill, 2003.</li>
+      </ol>
+      <h3 class="text-xl font-semibold text-blue-700 mb-3">Reference Books</h3>
+      <ol class="list-decimal list-inside text-gray-700 space-y-2">
+        <li>Krithivasan K, Introduction to Formal Languages, Automata Theory and Computation, Pearson Education, 2009.</li>
+        <li>Rich E, Automata, Computability, and Complexity – Theory and Applications, Pearson Education, 2012.</li>
+        <li>Singh A, Elements of Computation Theory, Springer, 2009.</li>
+        <li>Cohen D I A, Introduction to Computer Theory, 2nd edition, John Wiley, 2000.</li>
+        <li>Lewis H, Papadimitriou C H, Elements of the Theory of Computation, 2nd edition, Prentice Hall, 1997.</li>
+      </ol>
+    </div>
+  </div>
+  <footer class="bg-gray-900 text-white py-12 mt-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="col-span-1 md:col-span-2">
+                <h3 class="text-2xl font-bold mb-4">SVUSTUDYNEST</h3>
+                <p class="text-gray-400">A platform for study resources for SVU students</p>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                  <li><a href="/templetes/csedashboard.html" class="text-gray-400 hover:text-white">Home</a></li>
+                  <li><a href="semester5.html" class="text-gray-400 hover:text-white">Subjects</a></li>
+                  <li><a href="/templetes/login.html" class="text-gray-400 hover:text-white">Login</a></li>
+                </ul>
+            </div>
+            <div class="grid grid-cols-2 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 id="footer-contact" class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li><a href="mailto:support@svustudynest.com" class="text-gray-400 hover:text-white">support@svustudynest.com</a></li>
+                      <li><a href="mailto:info@svustudynest.com" class="text-gray-400 hover:text-white">info@svustudynest.com</a></li>
+                      <li><a href="mailto:help@svustudynest.com" class="text-gray-400 hover:text-white">help@svustudynest.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+            <p class="text-gray-400"> &copy; 2024 SVUSTUDYNEST. Sri Venkateswara University.</p>
+        </div>
+    </div>
+</footer>
+  <script src="../auth.js"></script>
+  <script>
+    function showTab(unitId) {
+      const tabContents = document.querySelectorAll('.tab-content');
+      tabContents.forEach(content => { content.classList.remove('active'); });
+      const tabButtons = document.querySelectorAll('.tab-button');
+      tabButtons.forEach(button => { button.classList.remove('active'); });
+      document.getElementById(unitId).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+  <div id="profileOverlay" class="fixed inset-0 z-50 hidden">
+    <div class="absolute inset-0 bg-black bg-opacity-30" onclick="closeProfilePanel()"></div>
+    <div id="profilePanel" class="absolute top-0 right-0 w-80 max-w-full h-full bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col border-l border-blue-300 rounded-l-xl">
+      <div class="flex justify-between items-center px-6 py-4 border-b bg-blue-100 shadow-sm rounded-tl-xl">
+        <h2 class="text-xl font-extrabold text-blue-700">Your Profile</h2>
+        <button onclick="closeProfilePanel()" class="text-3xl font-bold text-blue-700 hover:text-blue-900 transition-transform duration-50 ease-in-out active:scale-95">&times;</button>
+      </div>
+      <div class="p-5 flex-1 overflow-y-auto text-sm text-gray-700 space-y-3">
+        <p><strong class="text-lg">Name:</strong><br> <span id="p_name" class="text-base"></span></p>
+        <p><strong class="text-lg">Roll No:</strong><br> <span id="p_roll" class="text-base"></span></p>
+        <p><strong class="text-lg">Gender:</strong><br> <span id="p_gender" class="text-base"></span></p>
+        <p><strong class="text-lg">Course:</strong><br> <span id="p_course" class="text-base"></span></p>
+        <p><strong class="text-lg">Branch:</strong><br> <span id="p_branch" class="text-base"></span></p>
+        <p><strong class="text-lg">Email:</strong><br> <span id="p_email" class="text-base"></span></p>
+        <p><strong class="text-lg">Mobile:</strong><br> <span id="p_mobile" class="text-base"></span></p>
+        <p><strong class="text-lg">Address:</strong><br> <span id="p_address" class="text-base"></span></p>
+      </div>
+      <div class="px-6 py-4 border-t bg-gray-50">
+        <button id="logoutBtn" class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-600 transition-transform duration-50 ease-in-out active:scale-95">Logout</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    const profileBtn = document.getElementById('profileBtn');
+    const profileOverlay = document.getElementById('profileOverlay');
+    const profilePanel = document.getElementById('profilePanel');
+    profileBtn.addEventListener('click', async () => {
+      profileOverlay.classList.remove('hidden');
+      profilePanel.classList.remove('translate-x-full');
+      const res = await fetch('/check-auth');
+      const { student_roll } = await res.json();
+      const student = await fetch(`/api/student/${student_roll}`);
+      const data = await student.json();
+      document.getElementById('p_name').textContent = data.name;
+      document.getElementById('p_roll').textContent = data.roll;
+      document.getElementById('p_gender').textContent = data.gender || '-';
+      document.getElementById('p_course').textContent = data.course || '-';
+      document.getElementById('p_branch').textContent = data.branch || '-';
+      document.getElementById('p_email').textContent = data.email_id || '-';
+      document.getElementById('p_mobile').textContent = data.mobileno || '-';
+      document.getElementById('p_address').textContent = data.address || '-';
+    });
+    function closeProfilePanel() {
+      profilePanel.classList.add('translate-x-full');
+      setTimeout(() => { profileOverlay.classList.add('hidden'); }, 300);
+    }
+    window.addEventListener('keydown', e => { if (e.key === 'Escape') closeProfilePanel(); });
+  </script>
+</body>
+</html>

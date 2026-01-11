@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Design and Analysis of Algorithms - Complete Course - SVUSTUDYNEST</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    div {
+      font-family: 'Poppins', sans-serif;
+    }      
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .tab-button.active {
+      background-color: #1877F2;
+      color: white;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <nav class="w-full flex items-center justify-between px-6 md:px-16 py-4 bg-white shadow-md fixed top-0 left-0 z-10" style="box-shadow: 0 4px 16px 0 rgba(59,130,246,0.15), 0 1.5px 6px 0 rgba(59,130,246,0.10);">
+    <span class="text-2xl md:text-3xl font-extrabold text-blue-600 tracking-tight" style="text-shadow: 0 2px 8px rgba(59,130,246,0.35), 0 1px 1px rgba(59,130,246,0.25);">
+      <a href="semester4.html" class="text-blue-600 font-semibold hover:underline">&larr;&nbsp;</a>SVUSTUDYNEST</span>
+      <div class="relative">
+  <button id="profileBtn" 
+    class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center shadow hover:bg-blue-700 transition">
+        <i class="fa fa-user text-2xl text-white"></i>
+  </button>
+      </div>
+    </nav>
+    
+  <!-- Content -->
+  <div class="flex-1 pt-24 px-6 sm:px-10 md:px-16 lg:px-32 xl:px-40">
+    <h1 class="text-3xl font-bold text-blue-700 mb-6">Design and Analysis of Algorithms - Complete Resources</h1>
+    
+    <!-- Unit Navigation Tabs -->
+    <div class="bg-white shadow-md rounded-xl p-4 mb-8">
+      <div class="flex flex-wrap gap-2 justify-center">
+        <button class="tab-button active px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit1')">
+          Unit 1: Introduction
+        </button>
+        <button class="tab-button px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit2')">
+          Unit 2: Divide & Conquer
+        </button>
+        <button class="tab-button px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit3')">
+          Unit 3: Greedy Method
+        </button>
+        <button class="tab-button px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit4')">
+          Unit 4: Dynamic Programming
+        </button>
+        <button class="tab-button px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit5')">
+          Unit 5: Backtracking & NP-Hard
+        </button>
+      </div>
+    </div>
+
+    <!-- Unit 1 Content -->
+    <div id="unit1" class="tab-content active">
+      <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 1: Introduction to Algorithms</h2>
+        
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          This unit introduces the fundamental concepts of algorithms, including their specification, performance analysis, and complexity notations.
+        </p>
+
+        <!-- Topics Covered Box -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered:</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Algorithm Specification, Performance Analysis (Space & Time Complexity)</li>
+            <li>Asymptotic Notations (O, Ω, Θ)</li>
+            <li>Randomized Algorithms and Primality Testing</li>
+            <li>Disjoint Set Operations: Union and Find</li>
+          </ul>
+          <br>
+          <!-- PDF Buttons -->
+          <div class="flex gap-4 mb-6">
+            <a href="daa_unit1_notes.pdf" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-transform duration-100 ease-in-out active:scale-95">📄 View PDF</a>
+            <a href="daa_unit1_notes.pdf" download class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-transform duration-100 ease-in-out active:scale-95">⬇️ Download PDF</a>
+          </div>
+        </div>
+
+        <!-- Important Questions Box -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions</h3>
+          <ul class="list-decimal list-inside text-gray-700 space-y-2">
+            <li>What is an algorithm? Explain its characteristics.</li>
+            <li>Explain Asymptotic Notations (Big O, Omega, Theta) with examples.</li>
+            <li>What is performance analysis? Explain time and space complexity.</li>
+            <li>Explain the Union and Find operations on disjoint sets.</li>
+          </ul>
+        </div>
+
+        <!-- Videos Box -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos to Understand Easily</h3>
+          
+          <div class="space-y-6">
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">1. Introduction to Algorithms & Asymptotic Notations</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/0IAPZzGSbME" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/8hly31xKli0" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Unit 2 Content -->
+    <div id="unit2" class="tab-content">
+      <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 2: Divide and Conquer</h2>
+        
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          This unit covers the divide and conquer strategy, applying it to problems like searching, sorting, and matrix multiplication.
+        </p>
+
+        <!-- Topics Covered Box -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered:</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>General Method of Divide and Conquer</li>
+            <li>Binary Search, Finding Maximum and Minimum</li>
+            <li>Merge Sort and Quick Sort</li>
+            <li>Strassen's Matrix Multiplication, Convex Hull</li>
+          </ul>
+          <br>
+          <!-- PDF Buttons -->
+          <div class="flex gap-4 mb-6">
+            <a href="daa_unit2_notes.pdf" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-transform duration-100 ease-in-out active:scale-95">📄 View PDF</a>
+            <a href="daa_unit2_notes.pdf" download class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-transform duration-100 ease-in-out active:scale-95">⬇️ Download PDF</a>
+          </div>
+        </div>
+
+        <!-- Important Questions Box -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions</h3>
+          <ul class="list-decimal list-inside text-gray-700 space-y-2">
+            <li>Explain the general method of Divide and Conquer.</li>
+            <li>Write the algorithm for Merge Sort and analyze its complexity.</li>
+            <li>Write the algorithm for Quick Sort and analyze its complexity.</li>
+            <li>Explain Strassen's matrix multiplication.</li>
+          </ul>
+        </div>
+
+        <!-- Videos Box -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos to Understand Easily</h3>
+          
+          <div class="space-y-6">
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">1. Divide and Conquer, Merge Sort, Quick Sort</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/2KaR-zQoCaU" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/Ho9Pa2i-PqM" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Unit 3 Content -->
+    <div id="unit3" class="tab-content">
+      <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 3: The Greedy Method</h2>
+        
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          This unit explores the greedy approach for optimization problems, including Knapsack, Job Sequencing, and Minimum Spanning Trees.
+        </p>
+
+        <!-- Topics Covered Box -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered:</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>General Method of Greedy Approach</li>
+            <li>Knapsack Problem, Job Sequencing with Deadlines</li>
+            <li>Minimum Cost Spanning Trees (Prims & Kruskals)</li>
+            <li>Single Source Shortest Paths (Dijkstra's Algorithm)</li>
+            <li>Graph Traversal Techniques (DFS & BFS)</li>
+          </ul>
+          <br>
+          <!-- PDF Buttons -->
+          <div class="flex gap-4 mb-6">
+            <a href="daa_unit3_notes.pdf" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-transform duration-100 ease-in-out active:scale-95">📄 View PDF</a>
+            <a href="daa_unit3_notes.pdf" download class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-transform duration-100 ease-in-out active:scale-95">⬇️ Download PDF</a>
+          </div>
+        </div>
+
+        <!-- Important Questions Box -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions</h3>
+          <ul class="list-decimal list-inside text-gray-700 space-y-2">
+            <li>Explain the Greedy method. Solve the Knapsack problem using this method.</li>
+            <li>Explain Job Sequencing with deadlines with an example.</li>
+            <li>Explain Prim's and Kruskal's algorithms for finding Minimum Spanning Tree.</li>
+            <li>Explain Dijkstra's algorithm for finding the single-source shortest path.</li>
+          </ul>
+        </div>
+
+        <!-- Videos Box -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos to Understand Easily</h3>
+          
+          <div class="space-y-6">
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">1. Greedy Algorithms, Dijkstra's, Prims & Kruskals</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/ARvQcqJgH4A" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/40_eI-hoG4U" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Unit 4 Content -->
+    <div id="unit4" class="tab-content">
+      <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 4: Dynamic Programming</h2>
+        
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          This unit covers dynamic programming, a technique for solving complex problems by breaking them down into simpler subproblems.
+        </p>
+
+        <!-- Topics Covered Box -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered:</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>General Method of Dynamic Programming</li>
+            <li>All-Pairs Shortest Paths (Floyd-Warshall)</li>
+            <li>Optimal Binary Search Trees</li>
+            <li>0/1 Knapsack Problem</li>
+            <li>Traveling Salesperson Problem</li>
+          </ul>
+          <br>
+          <!-- PDF Buttons -->
+          <div class="flex gap-4 mb-6">
+            <a href="daa_unit4_notes.pdf" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-transform duration-100 ease-in-out active:scale-95">📄 View PDF</a>
+            <a href="daa_unit4_notes.pdf" download class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-transform duration-100 ease-in-out active:scale-95">⬇️ Download PDF</a>
+          </div>
+        </div>
+
+        <!-- Important Questions Box -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions</h3>
+          <ul class="list-decimal list-inside text-gray-700 space-y-2">
+            <li>Explain the concept of Dynamic Programming.</li>
+            <li>Solve the all-pairs shortest path problem using Floyd-Warshall algorithm.</li>
+            <li>Explain how to solve the 0/1 Knapsack problem using dynamic programming.</li>
+            <li>Explain the Traveling Salesperson Problem and how to solve it.</li>
+          </ul>
+        </div>
+
+        <!-- Videos Box -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos to Understand Easily</h3>
+          
+          <div class="space-y-6">
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">1. Dynamic Programming, Floyd-Warshall, Knapsack</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/oBt53YbR9Kk" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/vYquumk4nWw" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Unit 5 Content -->
+    <div id="unit5" class="tab-content">
+      <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 5: Backtracking, Branch & Bound, NP-Hard Problems</h2>
+        
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          This unit delves into advanced topics like Backtracking, Branch and Bound, and the theory of NP-Hard and NP-Complete problems.
+        </p>
+
+        <!-- Topics Covered Box -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered:</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Backtracking: General Method, 8-Queens Problem, Sum of Subsets</li>
+            <li>Branch and Bound: The Method, 0/1 Knapsack, Traveling Salesperson</li>
+            <li>NP-Hard and NP-Complete Problems: Basic Concepts, Cook's Theorem</li>
+          </ul>
+          <br>
+          <!-- PDF Buttons -->
+          <div class="flex gap-4 mb-6">
+            <a href="daa_unit5_notes.pdf" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-transform duration-100 ease-in-out active:scale-95">📄 View PDF</a>
+            <a href="daa_unit5_notes.pdf" download class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-transform duration-100 ease-in-out active:scale-95">⬇️ Download PDF</a>
+          </div>
+        </div>
+
+        <!-- Important Questions Box -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions</h3>
+          <ul class="list-decimal list-inside text-gray-700 space-y-2">
+            <li>Explain the general method of Backtracking. Solve the 8-Queens problem.</li>
+            <li>Explain the Branch and Bound technique with an example.</li>
+            <li>What is the difference between NP-Hard and NP-Complete problems?</li>
+            <li>Explain Cook's theorem.</li>
+          </ul>
+        </div>
+
+        <!-- Videos Box -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos to Understand Easily</h3>
+          
+          <div class="space-y-6">
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">1. Backtracking, Branch & Bound, NP-Complete</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/gBC_cr6hLfo" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/eQCS_v3YCyQ" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <!-- Footer -->
+   <footer class="bg-gray-900 text-white py-12 mt-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="col-span-1 md:col-span-2">
+                <h3 class="text-2xl font-bold mb-4">SVUSTUDYNEST</h3>
+                <p class="text-gray-400">A platform for study resources for SVU students</p>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                  <li><a href="/templetes/csedashboard.html" class="text-gray-400 hover:text-white">Home</a></li>
+                  <li><a href="semester4.html" class="text-gray-400 hover:text-white">Subjects</a></li>
+                  <li><a href="/templetes/login.html" class="text-gray-400 hover:text-white">Login</a></li>
+                </ul>
+            </div>
+            <div class="grid grid-cols-2 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                        
+                    </ul>
+                </div>
+                <div>
+                    <h4 id="footer-contact" class="text-lg font-semibold mb-4">Contact</h4>
+                   <ul class="space-y-2">
+                        <li><a href="mailto:support@svustudynest.com" class="text-gray-400 hover:text-white">support@svustudynest.com</a></li>
+                      <li><a href="mailto:info@svustudynest.com" class="text-gray-400 hover:text-white">info@svustudynest.com</a></li>
+                      <li><a href="mailto:help@svustudynest.com" class="text-gray-400 hover:text-white">help@svustudynest.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+            <p class="text-gray-400"> &copy; 2024 SVUSTUDYNEST. Sri Venkateswara University.</p>
+        </div>
+    </div>
+</footer>
+
+  <!-- Include common authentication script -->
+  <script src="../auth.js"></script>
+
+  <!-- Tab Navigation Script -->
+  <script>
+    function showTab(unitId) {
+      // Hide all tab contents
+      const tabContents = document.querySelectorAll('.tab-content');
+      tabContents.forEach(content => {
+        content.classList.remove('active');
+      });
+
+      // Remove active class from all tab buttons
+      const tabButtons = document.querySelectorAll('.tab-button');
+      tabButtons.forEach(button => {
+        button.classList.remove('active');
+      });
+
+      // Show selected tab content
+      document.getElementById(unitId).classList.add('active');
+
+      // Add active class to clicked button
+      event.target.classList.add('active');
+    }
+  </script>
+
+  <!-- Slide-out Profile Overlay -->
+<div id="profileOverlay" class="fixed inset-0 z-50 hidden">
+  <div class="absolute inset-0 bg-black bg-opacity-30" onclick="closeProfilePanel()"></div>
+
+  <!-- Slide-out Profile Panel -->
+  <div id="profilePanel" class="absolute top-0 right-0 w-80 max-w-full h-full bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col border-l border-blue-300 rounded-l-xl">
+    <div class="flex justify-between items-center px-6 py-4 border-b bg-blue-100 shadow-sm rounded-tl-xl">
+      <h2 class="text-xl font-extrabold text-blue-700">Your Profile</h2>
+      <button onclick="closeProfilePanel()" class="text-3xl font-bold text-blue-700 hover:text-blue-900 transition-transform duration-50 ease-in-out active:scale-95">&times;</button>
+    </div>
+    <div class="p-5 flex-1 overflow-y-auto text-sm text-gray-700 space-y-3">
+      <p><strong class="text-lg">Name:</strong><br> <span id="p_name" class="text-base"></span></p>
+      <p><strong class="text-lg">Roll No:</strong><br> <span id="p_roll" class="text-base"></span></p>
+      <p><strong class="text-lg">Gender:</strong><br> <span id="p_gender" class="text-base"></span></p>
+      <p><strong class="text-lg">Course:</strong><br> <span id="p_course" class="text-base"></span></p>
+      <p><strong class="text-lg">Branch:</strong><br> <span id="p_branch" class="text-base"></span></p>
+      <p><strong class="text-lg">Email:</strong><br> <span id="p_email" class="text-base"></span></p>
+      <p><strong class="text-lg">Mobile:</strong><br> <span id="p_mobile" class="text-base"></span></p>
+      <p><strong class="text-lg">Address:</strong><br> <span id="p_address" class="text-base"></span></p>
+    </div>
+    <div class="px-6 py-4 border-t bg-gray-50">
+      <button id="logoutBtn" class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-600 transition-transform duration-50 ease-in-out active:scale-95">Logout</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const profileBtn = document.getElementById('profileBtn');
+  const profileOverlay = document.getElementById('profileOverlay');
+  const profilePanel = document.getElementById('profilePanel');
+
+  profileBtn.addEventListener('click', async () => {
+    profileOverlay.classList.remove('hidden');
+    profilePanel.classList.remove('translate-x-full');
+
+    const res = await fetch('/check-auth');
+    const { student_roll } = await res.json();
+    const student = await fetch(`/api/student/${student_roll}`);
+    const data = await student.json();
+
+    document.getElementById('p_name').textContent = data.name;
+    document.getElementById('p_roll').textContent = data.roll;
+    document.getElementById('p_gender').textContent = data.gender || '-';
+    document.getElementById('p_course').textContent = data.course || '-';
+    document.getElementById('p_branch').textContent = data.branch || '-';
+    document.getElementById('p_email').textContent = data.email_id || '-';
+    document.getElementById('p_mobile').textContent = data.mobileno || '-';
+    document.getElementById('p_address').textContent = data.address || '-';
+  });
+
+  function closeProfilePanel() {
+    profilePanel.classList.add('translate-x-full');
+    setTimeout(() => {
+      profileOverlay.classList.add('hidden');
+    }, 300);
+  }
+
+  window.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeProfilePanel();
+  });
+</script>
+
+</body>
+</html> 

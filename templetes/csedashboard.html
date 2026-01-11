@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>SVUSTUDYNEST - CSE_Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    nav { font-family: 'Montserrat', sans-serif; }
+    div {
+      font-family: 'Poppins', sans-serif;
+    }
+    button {
+    transition: transform 0.1s ease-in-out;
+}
+
+button:active {
+    transform: scale(0.94);
+}
+  </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+   <!-- Navbar -->
+  <nav class="w-full flex items-center justify-between px-6 md:px-16 py-4 bg-white shadow-md fixed top-0 left-0 z-10" style="box-shadow: 0 4px 16px 0 rgba(59,130,246,0.15), 0 1.5px 6px 0 rgba(59,130,246,0.10);">
+    <span class="text-2xl md:text-3xl font-extrabold text-blue-600 tracking-tight" style="text-shadow: 0 2px 8px rgba(59,130,246,0.35), 0 1px 1px rgba(59,130,246,0.25);">
+      SVUSTUDYNEST</span>
+    <div class="relative">
+      <button id="profileBtn" class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center shadow hover:bg-blue-700 transition">
+        <i class="fa fa-user text-2xl text-white"></i>
+      </button>
+    </div>
+  </nav>
+  
+  <main class="flex-1 flex flex-col items-center justify-center text-center px-4 pt-20">
+    <h1 class="text-3xl font-bold mb-8 pt-5">Select Your Semester</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl">
+      <!-- 1st Year -->
+      <div class="rounded-2xl shadow-lg p-6 bg-white flex flex-col items-center">
+        <div class="text-2xl font-bold text-gray-600 mb-4 text-left w-full">1st Year</div>
+        <div class="flex flex-row gap-4 w-full justify-center">
+          <div class=" rounded-xl border border-gray-300 shadow-lg p-4 flex-1 min-w-[120px]">
+            <div class="text-base sm:text-lg md:text-xl font-bold text-blue-700 pb-2">Semester 1</div>
+            <p class="text-gray-600 text-sm sm:text-base pb-2">View all resources for Semester 1.</p>
+            <a href="/semester1.html" class="mt-2 bg-blue-200 text-blue-800 text-sm sm:text-base px-4 py-2 rounded-lg font-bold shadow hover:bg-blue-300 transition-transform duration-100 ease-in-out active:scale-95 w-full inline-block">View More<i class="fa fa-chevron-right pl-2"></i></a>
+          </div>
+          <div class=" rounded-xl shadow-lg border border-gray-300 p-4 flex-1 min-w-[120px]">
+            <div class="text-base sm:text-lg md:text-xl font-bold text-blue-700 pb-2">Semester 2</div>
+            <p class="text-gray-600 text-sm sm:text-base pb-2">View all resources for Semester 2.</p>
+            <a href="/semester2.html" class="mt-2 bg-blue-200 text-blue-800 text-sm sm:text-base px-4 py-2 rounded-lg font-bold shadow hover:bg-blue-300 transition-transform duration-100 ease-in-out active:scale-95 w-full inline-block">View More<i class="fa fa-chevron-right pl-2"></i></a>
+          </div>
+        </div>
+      </div>
+      <!-- 2nd Year -->
+      <div class="rounded-2xl shadow-lg p-6 bg-white flex flex-col items-center">
+        <div class="text-2xl font-bold  mb-4 text-gray-600 text-left w-full">2nd Year</div>
+        <div class="flex flex-row gap-4 w-full justify-center">
+          <div class=" rounded-xl border border-gray-300 shadow-lg p-4 flex-1 min-w-[120px]">
+            <div class="text-base sm:text-lg md:text-xl font-bold text-blue-700 pb-2">Semester 3</div>
+            <p class="text-gray-600 text-sm sm:text-base pb-2">View all resources for Semester 3.</p>
+            <a href="/semester3.html" class="mt-2 bg-blue-200 text-blue-800 text-sm sm:text-base px-4 py-2 rounded-lg font-bold shadow hover:bg-blue-300 transition-transform duration-100 ease-in-out active:scale-95 w-full inline-block">View More<i class="fa fa-chevron-right pl-2"></i></a>
+          </div>
+          <div class="border border-gray-300 rounded-xl shadow-lg p-4 flex-1 min-w-[120px]">
+            <div class="text-base sm:text-lg md:text-xl font-bold text-blue-700 pb-2">Semester 4</div>
+            <p class="text-gray-600 text-sm sm:text-base pb-2">View all resources for Semester 4.</p>
+            <a href="/semester4.html" class="mt-2 bg-blue-200 text-blue-800 text-sm sm:text-base px-4 py-2 rounded-lg font-bold shadow hover:bg-blue-300 transition-transform duration-100 ease-in-out active:scale-95 w-full inline-block">View More<i class="fa fa-chevron-right pl-2"></i></a>
+          </div>
+        </div>
+      </div>
+      <!-- 3rd Year -->
+      <div class="rounded-2xl shadow-lg p-6 bg-white flex flex-col items-center">
+        <div class="text-2xl font-bold text-gray-600 mb-4 text-left w-full">3rd Year</div>
+        <div class="flex flex-row gap-4 w-full justify-center">
+          <div class="border border-gray-300 shadow-lg rounded-xl  p-4 flex-1 min-w-[120px]">
+            <div class="text-base sm:text-lg md:text-xl font-bold text-blue-700 pb-2">Semester 5</div>
+            <p class="text-gray-600 text-sm sm:text-base pb-2">View all resources for Semester 5.</p>
+            <a href="/semester5.html" class="mt-2 bg-blue-200 text-blue-800 text-sm sm:text-base px-4 py-2 rounded-lg font-bold shadow hover:bg-blue-300 transition-transform duration-100 ease-in-out active:scale-95 w-full inline-block">View More<i class="fa fa-chevron-right pl-2"></i></a>
+          </div>
+          <div class="border border-gray-300 shadow-lg rounded-xl p-4 flex-1 min-w-[120px]">
+            <div class="text-base sm:text-lg md:text-xl font-bold text-blue-700 pb-2">Semester 6</div>
+            <p class="text-gray-600 text-sm sm:text-base pb-2">View all resources for Semester 6.</p>
+            <a href="/semester6.html" class="mt-2 bg-blue-200 text-blue-800 text-sm sm:text-base px-4 py-2 rounded-lg font-bold shadow hover:bg-blue-300 transition-transform duration-100 ease-in-out active:scale-95 w-full inline-block">View More<i class="fa fa-chevron-right pl-2"></i></a>
+          </div>
+        </div>
+      </div>
+      <!-- 4th Year -->
+      <div class="rounded-2xl shadow-lg p-6 bg-white flex flex-col items-center">
+        <div class="text-2xl font-bold text-gray-600 mb-4 text-left w-full">4th Year</div>
+        <div class="flex flex-row gap-4 w-full justify-center">
+          <div class="border border-gray-300 shadow-lg rounded-xl  p-4 flex-1 min-w-[120px]">
+            <div class="text-xl font-bold text-blue-700 pb-2">Semester 7</div>
+            <p class="text-gray-600 text-base pb-2">View all resources for Semester 7.</p>
+            <a href="/semester7.html" class="mt-2 bg-blue-200 text-blue-800 text-sm sm:text-base px-4 py-2 rounded-lg font-bold shadow hover:bg-blue-300 transition-transform duration-100 ease-in-out active:scale-95 w-full inline-block">View More<i class="fa fa-chevron-right pl-2"></i></a>
+          </div>
+          <div class="border border-gray-300 shadow-lg rounded-xl  p-4 flex-1 min-w-[120px]">
+            <div class="text-xl font-bold text-blue-700 pb-2">Semester 8</div>
+            <p class="text-gray-600 text-base pb-2">View all resources for Semester 8.</p>
+            <a href="/semester8.html" class="mt-2 bg-blue-200 text-blue-800 text-sm sm:text-base px-4 py-2 rounded-lg font-bold shadow hover:bg-blue-300 transition-transform duration-100 ease-in-out active:scale-95 w-full inline-block">View More<i class="fa fa-chevron-right pl-2"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+   <!-- Footer -->
+   <footer class="bg-gray-900 text-white py-12 mt-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="col-span-1 md:col-span-2">
+                <h3 class="text-2xl font-bold mb-4">SVUSTUDYNEST</h3>
+                <p class="text-gray-400">A platform for study resources for SVU students</p>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="/csedashboard.html" class="text-gray-400 hover:text-white">Home</a></li>
+                   
+                    <li><a href="/login.html" class="text-gray-400 hover:text-white">Login</a></li>
+                   
+                </ul>
+            </div>
+            <div class="grid grid-cols-2 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                        
+                    </ul>
+                </div>
+                <div>
+                    <h4 id="footer-contact" class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li><a href="mailto:support@healthvault.com" class="text-gray-400 hover:text-white">support@healthvault.com</a></li>
+                        <li><a href="mailto:info@healthvault.com" class="text-gray-400 hover:text-white">info@healthvault.com</a></li>
+                        <li><a href="mailto:help@healthvault.com" class="text-gray-400 hover:text-white">help@healthvault.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+            <p class="text-gray-400"> &copy; 2024 SVUSTUDYNEST. Sri Venkateswara University.</p>
+        </div>
+    </div>
+</footer>
+  
+  <!-- Include common authentication script -->
+  <script src="../auth.js"></script>
+
+  <!-- Slide-out Profile Overlay -->
+<div id="profileOverlay" class="fixed inset-0 z-50 hidden">
+  <div class="absolute inset-0 bg-black bg-opacity-30" onclick="closeProfilePanel()"></div>
+
+ <!-- Slide-out Profile Panel -->
+<div id="profilePanel" class="fixed top-0 right-0 w-80 max-w-full h-full bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 flex flex-col border-l border-blue-200 rounded-l-xl">
+  <div class="flex justify-between items-center px-6 py-4 border-b bg-blue-100 shadow-sm rounded-tl-xl">
+    <h2 class="text-xl font-extrabold text-blue-700">Your Profile</h2>
+    <button onclick="closeProfilePanel()" class="text-3xl font-bold text-blue-700 hover:text-blue-900 transition-transform duration-50 ease-in-out active:scale-95 ">&times;</button>
+  </div>
+  <div class="p-5 flex-1 overflow-y-auto text-sm text-gray-700 space-y-3">
+    <p ><strong class="text-lg">Name:</strong><br> <span id="p_name" class="text-base"></span></p>
+    <p><strong class="text-lg">Roll No:</strong><br> <span id="p_roll" class="text-base"></span></p>
+    <p><strong class="text-lg">Gender:</strong><br> <span id="p_gender" class="text-base"></span></p>
+    <p><strong class="text-lg">Course:</strong><br> <span id="p_course" class="text-base"></span></p>
+    <p><strong class="text-lg">Branch:</strong><br> <span id="p_branch" class="text-base"></span></p>
+    <p><strong class="text-lg">Email:</strong><br> <span id="p_email" class="text-base"></span></p>
+    <p><strong class="text-lg">Mobile:</strong><br> <span id="p_mobile" class="text-base"></span></p>
+    <p><strong class="text-lg">Address:</strong><br> <span id="p_address" class="text-base"></span></p>
+  </div>
+  <div class="px-6 py-4 border-t bg-gray-50">
+    <button id="logoutBtn" class="w-full bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition">Logout</button>
+  </div>
+</div>
+
+
+   
+<script>
+  const profileBtn = document.getElementById('profileBtn');
+  const profileOverlay = document.getElementById('profileOverlay');
+  const profilePanel = document.getElementById('profilePanel');
+
+  profileBtn.addEventListener('click', async () => {
+    profileOverlay.classList.remove('hidden');
+    profilePanel.classList.remove('translate-x-full');
+
+    const res = await fetch('/check-auth');
+    const { student_roll } = await res.json();
+    const student = await fetch(`/api/student/${student_roll}`);
+    const data = await student.json();
+
+    document.getElementById('p_name').textContent = data.name;
+    document.getElementById('p_roll').textContent = data.roll;
+    document.getElementById('p_gender').textContent = data.gender || '-';
+    document.getElementById('p_course').textContent = data.course || '-';
+    document.getElementById('p_branch').textContent = data.branch || '-';
+    document.getElementById('p_email').textContent = data.email_id || '-';
+    document.getElementById('p_mobile').textContent = data.mobileno || '-';
+    document.getElementById('p_address').textContent = data.address || '-';
+  });
+
+  function closeProfilePanel() {
+    profilePanel.classList.add('translate-x-full');
+    setTimeout(() => {
+      profileOverlay.classList.add('hidden');
+    }, 300);
+  }
+
+  window.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeProfilePanel();
+  });
+</script>
+
+</body>
+</html>

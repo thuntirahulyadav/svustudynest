@@ -1,0 +1,483 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Programming for Problem Solving - Complete Course - SVUSTUDYNEST</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    div {
+      font-family: 'Poppins', sans-serif;
+    }      
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .tab-button.active {
+      background-color: #1877F2;
+      color: white;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <nav class="w-full flex items-center justify-between px-6 md:px-16 py-4 bg-white shadow-md fixed top-0 left-0 z-10" style="box-shadow: 0 4px 16px 0 rgba(59,130,246,0.15), 0 1.5px 6px 0 rgba(59,130,246,0.10);">
+    <span class="text-2xl md:text-3xl font-extrabold text-blue-600 tracking-tight" style="text-shadow: 0 2px 8px rgba(59,130,246,0.35), 0 1px 1px rgba(59,130,246,0.25);">
+      <a href="semester1.html" class="text-blue-600 font-semibold hover:underline">&larr;&nbsp;</a>SVUSTUDYNEST</span>
+      <div class="relative">
+  <button id="profileBtn" 
+    class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center shadow hover:bg-blue-700 transition">
+        <i class="fa fa-user text-2xl text-white"></i>
+  </button>
+      </div>
+    </nav>
+
+
+  <!-- Content -->
+  <div class="flex-1 pt-24 px-6 sm:px-10 md:px-16 lg:px-32 xl:px-40">
+    <h1 class="text-3xl font-bold mb-6">Programming for Problem Solving - Complete Resources</h1>
+    
+    <!-- Unit Navigation Tabs -->
+    <div class="bg-white shadow-md rounded-xl p-4 mb-8">
+      <div class="flex flex-wrap gap-2 justify-center">
+        <button class="tab-button active px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit1')">
+          Unit 1: Problem Solving & Basics of C
+        </button>
+        <button class="tab-button px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit2')">
+          Unit 2: Conditionals, Loops & Functions
+        </button>
+        <button class="tab-button px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit3')">
+          Unit 3: Arrays, Strings & Pointers
+        </button>
+        <button class="tab-button px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit4')">
+          Unit 4: Structures & File Processing
+        </button>
+        <button class="tab-button px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blue-100" onclick="showTab('unit5')">
+          Unit 5: OOP Basics (C++)
+        </button>
+      </div>
+    </div>
+
+    <!-- Unit 1 -->
+    <div id="unit1" class="tab-content active">
+      <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 1: Problem Solving & Basics of C</h2>
+
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          Problem solving steps, flowcharts, algorithm design. Structure of a C program, tokens, identifiers, data types & sizes, constants/variables, operators, precedence & associativity, expressions, type conversions, and basic I/O.
+        </p>
+
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Problem-solving techniques & flowcharts</li>
+            <li>Structure of a C program & preprocessor</li>
+            <li>Tokens, identifiers, data types, constants, variables</li>
+            <li>Operators, precedence, associativity & type conversion</li>
+            <li>Basic input/output (scanf/printf)</li>
+          </ul>
+          <br>
+          <div class="flex gap-4 mb-2">
+            <a href="pps_unit1_notes.pdf" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-transform duration-100 ease-in-out active:scale-95">📄 View PDF</a>
+            <a href="pps_unit1_notes.pdf" download class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-transform duration-100 ease-in-out active:scale-95">⬇️ Download PDF</a>
+          </div>
+        </div>
+
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions (Max 5)</h3>
+          <ul class="list-decimal list-inside text-gray-700 space-y-2">
+            <li>Draw a flowchart to check if a number is prime and explain each step.</li>
+            <li>Explain the structure of a C program (headers, main, declarations, statements) with a small example.</li>
+            <li>Discuss data types in C with size and range; differentiate variables, constants and identifiers.</li>
+            <li>Given the expression <code>x = a + b * c - d / e % f;</code>, explain how precedence & associativity evaluate it with a trace.</li>
+            <li>Write a C program that reads radius and length/width, then prints area of a circle and a rectangle (use <code>scanf</code>/<code>printf</code>).</li>
+          </ul>
+        </div>
+
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos</h3>
+          <div class="space-y-6">
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">1) Algorithms & Flowcharts</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/exampleA1" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/exampleA2" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">2) C Program Structure & I/O</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/exampleA3" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/exampleA4" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Unit 2 -->
+    <div id="unit2" class="tab-content">
+      <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 2: Conditionals, Loops & Functions</h2>
+
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          Selection statements (if, if–else, nested if–else, ladder, switch), iterative statements (while, do-while, for, nested), jump statements (break, continue, goto), functions (prototypes, parameter passing, recursion), storage classes, scope, header files, preprocessor.
+        </p>
+
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Decision making & switch-case</li>
+            <li>Loops: while, do-while, for; nested & infinite loops</li>
+            <li>Functions: prototypes, user-defined & recursive</li>
+            <li>Parameter passing: call by value vs reference (pointers)</li>
+            <li>Storage classes, scope rules, header files & preprocessor</li>
+          </ul>
+          <br>
+          <div class="flex gap-4 mb-2">
+            <a href="pps_unit2_notes.pdf" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700">📄 View PDF</a>
+            <a href="pps_unit2_notes.pdf" download class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700">⬇️ Download PDF</a>
+          </div>
+        </div>
+
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions (Max 5)</h3>
+          <ul class="list-decimal list-inside text-gray-700 space-y-2">
+            <li>Write a C program to find the largest among three numbers using nested <code>if</code>.</li>
+            <li>Write a C program using <code>switch</code> to build a basic calculator (+, −, ×, ÷).</li>
+            <li>Generate the first <em>n</em> Fibonacci numbers using a <code>for</code> loop.</li>
+            <li>Write a recursive function to compute factorial and compare with iterative version.</li>
+            <li>Explain call-by-value vs call-by-reference with short code snippets showing the difference.</li>
+          </ul>
+        </div>
+
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos</h3>
+          <div class="space-y-6">
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">1) Conditionals & Loops</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/exampleB1" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/exampleB2" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">2) Functions & Recursion</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/exampleB3" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/exampleB4" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Unit 3 -->
+    <div id="unit3" class="tab-content">
+      <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 3: Arrays, Strings & Pointers</h2>
+
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          1D & 2D arrays (declaration, access, searching/insertion/deletion), matrices (add/multiply/transpose), passing arrays to functions, string fundamentals & standard library functions, pointers (declaration, initialization, arithmetic), pointers & functions.
+        </p>
+
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>1D/2D arrays & operations</li>
+            <li>Matrix addition/multiplication/transpose</li>
+            <li>String handling & standard functions</li>
+            <li>Pointers & pointer arithmetic</li>
+            <li>Passing arrays & pointers to functions</li>
+          </ul>
+          <br>
+          <div class="flex gap-4 mb-2">
+            <a href="pps_unit3_notes.pdf" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700">📄 View PDF</a>
+            <a href="pps_unit3_notes.pdf" download class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700">⬇️ Download PDF</a>
+          </div>
+        </div>
+
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions (Max 5)</h3>
+          <ul class="list-decimal list-inside text-gray-700 space-y-2">
+            <li>Write a program to perform linear search on a 1D array and report the index if found.</li>
+            <li>Add two matrices and display the result; also print the transpose of the first matrix.</li>
+            <li>Explain pointer arithmetic with examples for <code>++p</code>, <code>p+2</code>, and <code>p1 - p2</code>; state restrictions.</li>
+            <li>Write a program to reverse a string and count vowels (without using <code>strrev</code>).</li>
+            <li>Write a function that takes an integer array and its size and returns the sum using pointer notation.</li>
+          </ul>
+        </div>
+
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos</h3>
+          <div class="space-y-6">
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">1) Arrays & Matrices</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/exampleC1" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/exampleC2" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">2) Pointers & Strings</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/exampleC3" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/exampleC4" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Unit 4 -->
+    <div id="unit4" class="tab-content">
+      <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 4: Structures & File Processing</h2>
+
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          Structures (declaration, variables, arrays of structures, nested & self-referential structures, unions, typedef, bit-fields) and file processing (text/binary files, file modes, open/close, read/write).
+        </p>
+
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Structures, arrays of structures, nested/self-referential</li>
+            <li>Unions, <code>typedef</code>, bit-fields</li>
+            <li>File concepts: text vs binary, modes</li>
+            <li>Reading & writing files; formatted/unformatted I/O</li>
+            <li>Error handling & EOF</li>
+          </ul>
+          <br>
+          <div class="flex gap-4 mb-2">
+            <a href="pps_unit4_notes.pdf" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700">📄 View PDF</a>
+            <a href="pps_unit4_notes.pdf" download class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700">⬇️ Download PDF</a>
+          </div>
+        </div>
+
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions (Max 5)</h3>
+          <ul class="list-decimal list-inside text-gray-700 space-y-2">
+            <li>Explain structures vs unions with memory layout examples.</li>
+            <li>Write a program to store and display details of <em>n</em> students using an array of structures.</li>
+            <li>Write a program to read a text file and count characters, words, and lines.</li>
+            <li>Write a program to store employee records to a binary file using <code>fwrite</code> and read them back with <code>fread</code>.</li>
+            <li>List and explain different file opening modes; demonstrate <code>EOF</code>-based reading.</li>
+          </ul>
+        </div>
+
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos</h3>
+          <div class="space-y-6">
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">1) Structures & Unions</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/exampleD1" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/exampleD2" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">2) Files (Text & Binary)</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/exampleD3" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/exampleD4" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Unit 5 -->
+    <div id="unit5" class="tab-content">
+      <div class="bg-white shadow-md rounded-xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Unit 5: OOP Basics (C++)</h2>
+
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          Need for OOP, principles of OOP, basics of C++, operator/function overloading, inheritance (derived classes, access specifiers), constructors, overriding member functions, class hierarchies, public/private inheritance, multiple inheritance.
+        </p>
+
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📚 Topics Covered</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>OOP principles & benefits</li>
+            <li>Classes, objects, constructors & destructors</li>
+            <li>Function & operator overloading</li>
+            <li>Single/multiple inheritance, access specifiers</li>
+            <li>Overriding & class hierarchies</li>
+          </ul>
+          <br>
+          <div class="flex gap-4 mb-2">
+            <a href="pps_unit5_notes.pdf" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700">📄 View PDF</a>
+            <a href="pps_unit5_notes.pdf" download class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700">⬇️ Download PDF</a>
+          </div>
+        </div>
+
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+          <h3 class="text-xl font-semibold text-blue-700 mb-3">📝 Important Questions (Max 5)</h3>
+          <ul class="list-decimal list-inside text-gray-700 space-y-2">
+            <li>Explain the principles of OOP (abstraction, encapsulation, inheritance, polymorphism) with one example each.</li>
+            <li>Write a C++ program to demonstrate <em>function overloading</em> with three versions of <code>sum()</code>.</li>
+            <li>Write a C++ program for <em>single inheritance</em> showing constructor/destructor call order.</li>
+            <li>Overload the <code>+</code> operator for a <code>Complex</code> class and test it.</li>
+            <li>Discuss <em>public</em>, <em>private</em>, and <em>protected</em> access specifiers and their effect on inheritance with a short example.</li>
+          </ul>
+        </div>
+
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-700 mb-4">🎥 Watch Videos</h3>
+          <div class="space-y-6">
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">1) OOP Concepts</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/exampleE1" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/exampleE2" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+            <div>
+              <p class="text-lg font-semibold text-gray-800 mb-3">2) Overloading & Inheritance</p>
+              <div class="grid md:grid-cols-2 gap-6">
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/exampleE3" frameborder="0" allowfullscreen></iframe>
+                <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/exampleE4" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12 mt-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="col-span-1 md:col-span-2">
+          <h3 class="text-2xl font-bold mb-4">SVUSTUDYNEST</h3>
+          <p class="text-gray-400">A platform for study resources for SVU students</p>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="/templetes/csedashboard.html" class="text-gray-400 hover:text-white">Home</a></li>
+            <li><a href="semester1.html" class="text-gray-400 hover:text-white">Subjects</a></li>
+            <li><a href="/templetes/login.html" class="text-gray-400 hover:text-white">Login</a></li>
+          </ul>
+        </div>
+        <div class="grid grid-cols-2 gap-8">
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Legal</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 id="footer-contact" class="text-lg font-semibold mb-4">Contact</h4>
+            <ul class="space-y-2">
+              <li><a href="mailto:support@svustudynest.com" class="text-gray-400 hover:text-white">support@svustudynest.com</a></li>
+              <li><a href="mailto:info@svustudynest.com" class="text-gray-400 hover:text-white">info@svustudynest.com</a></li>
+              <li><a href="mailto:help@svustudynest.com" class="text-gray-400 hover:text-white">help@svustudynest.com</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+        <p class="text-gray-400"> &copy; 2024 SVUSTUDYNEST. Sri Venkateswara University.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Include common authentication script -->
+  <script src="../auth.js"></script>
+
+  <!-- Tab Navigation Script -->
+  <script>
+    function showTab(unitId) {
+      const tabContents = document.querySelectorAll('.tab-content');
+      tabContents.forEach(content => content.classList.remove('active'));
+      const tabButtons = document.querySelectorAll('.tab-button');
+      tabButtons.forEach(button => button.classList.remove('active'));
+      document.getElementById(unitId).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+
+  <!-- Slide-out Profile Overlay -->
+  <div id="profileOverlay" class="fixed inset-0 z-50 hidden">
+    <div class="absolute inset-0 bg-black bg-opacity-30" onclick="closeProfilePanel()"></div>
+    <div id="profilePanel" class="absolute top-0 right-0 w-80 max-w-full h-full bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col border-l border-blue-300 rounded-l-xl">
+      <div class="flex justify-between items-center px-6 py-4 border-b bg-blue-100 shadow-sm rounded-tl-xl">
+        <h2 class="text-xl font-extrabold text-blue-700">Your Profile</h2>
+        <button onclick="closeProfilePanel()" class="text-3xl font-bold text-blue-700 hover:text-blue-900 transition-transform duration-50 ease-in-out active:scale-95">&times;</button>
+      </div>
+      <div class="p-5 flex-1 overflow-y-auto text-sm text-gray-700 space-y-3">
+        <p><strong class="text-lg">Name:</strong><br> <span id="p_name" class="text-base"></span></p>
+        <p><strong class="text-lg">Roll No:</strong><br> <span id="p_roll" class="text-base"></span></p>
+        <p><strong class="text-lg">Gender:</strong><br> <span id="p_gender" class="text-base"></span></p>
+        <p><strong class="text-lg">Course:</strong><br> <span id="p_course" class="text-base"></span></p>
+        <p><strong class="text-lg">Branch:</strong><br> <span id="p_branch" class="text-base"></span></p>
+        <p><strong class="text-lg">Email:</strong><br> <span id="p_email" class="text-base"></span></p>
+        <p><strong class="text-lg">Mobile:</strong><br> <span id="p_mobile" class="text-base"></span></p>
+        <p><strong class="text-lg">Address:</strong><br> <span id="p_address" class="text-base"></span></p>
+      </div>
+      <div class="px-6 py-4 border-t bg-gray-50">
+        <button id="logoutBtn" class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-600 transition-transform duration-50 ease-in-out active:scale-95">Logout</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const profileBtn = document.getElementById('profileBtn');
+    const profileOverlay = document.getElementById('profileOverlay');
+    const profilePanel = document.getElementById('profilePanel');
+
+    profileBtn.addEventListener('click', async () => {
+      profileOverlay.classList.remove('hidden');
+      profilePanel.classList.remove('translate-x-full');
+
+      const res = await fetch('/check-auth');
+      const { student_roll } = await res.json();
+      const student = await fetch(`/api/student/${student_roll}`);
+      const data = await student.json();
+
+      document.getElementById('p_name').textContent = data.name;
+      document.getElementById('p_roll').textContent = data.roll;
+      document.getElementById('p_gender').textContent = data.gender || '-';
+      document.getElementById('p_course').textContent = data.course || '-';
+      document.getElementById('p_branch').textContent = data.branch || '-';
+      document.getElementById('p_email').textContent = data.email_id || '-';
+      document.getElementById('p_mobile').textContent = data.mobileno || '-';
+      document.getElementById('p_address').textContent = data.address || '-';
+    });
+
+    function closeProfilePanel() {
+      profilePanel.classList.add('translate-x-full');
+      setTimeout(() => { profileOverlay.classList.add('hidden'); }, 300);
+    }
+
+    window.addEventListener('keydown', e => { if (e.key === 'Escape') closeProfilePanel(); });
+  </script>
+
+</body>
+</html>
+

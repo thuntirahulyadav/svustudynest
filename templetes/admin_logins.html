@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin - Login Records</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    nav { font-family: 'Montserrat', sans-serif; }
+    body, div { font-family: 'Poppins', sans-serif; }
+    .filter-btn.active { background-color: #ec4899; color: white; }
+    .filter-btn { transition: background 0.2s, color 0.2s; }
+    .table-container { max-height: 60vh; overflow-y: auto; }
+  </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+   <!-- Navbar -->
+  <nav class="w-full flex items-center justify-between px-6 md:px-16 py-4 bg-white shadow-md fixed top-0 left-0 z-10" style="box-shadow: 0 4px 16px 0 rgba(59,130,246,0.15), 0 1.5px 6px 0 rgba(59,130,246,0.10);">
+    <span class="text-2xl md:text-3xl font-extrabold text-blue-600 tracking-tight" style="text-shadow: 0 2px 8px rgba(59,130,246,0.35), 0 1px 1px rgba(59,130,246,0.25);">
+      <a href="admin_dashboard.html" class="text-blue-600 font-semibold hover:underline">&larr;&nbsp;</a>SVUSTUDYNEST Admin</span>
+     <div class="flex items-center gap-3">
+      <a href="/dashboard.html" class="text-white/90 hover:text-white text-sm font-semibold">Student View</a>
+      <button id="logoutBtn" class="bg-white/10 border border-blue/20 text-blue-600 px-3 py-1.5 rounded-lg text-sm font-semibold hover:bg-white/20 transition-transform duration-100 ease-in-out active:scale-95">Logout<i class="fa fa-sign-out text-blue-600 pl-2"></i></button>
+    </div>
+    </nav>
+
+  <div class="flex-1 pt-24 px-6 sm:px-10 md:px-16 lg:px-32 xl:px-40">
+    <h1 class="text-3xl font-bold  mb-6">Login Records</h1>
+    <div class="bg-white shadow-md rounded-xl p-4 mb-8 flex flex-wrap gap-2 items-center justify-center">
+      <div class="flex gap-2  w-full ">
+        <input type="text" id="searchBox" class="border border-blue-300 rounded-lg px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Search by name, roll no, email..." oninput="searchLogins()">
+        <select id="filterSelect" class="border border-blue-300 rounded-lg px-4 py-2 font-semibold bg-blue-50 text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400" onchange="filterLogins(this.value)">
+          <option value="today">Today</option>
+          <option value="month">This Month</option>
+          <option value="year">This Year</option>
+          <option value="all">All Logins</option>
+        </select>
+      </div>
+    </div>
+    <div class="table-container bg-white shadow rounded-xl p-4">
+       <div>
+          <div class="overflow-x-auto mt-2">
+            <table class="min-w-full text-sm">
+              <thead>
+                <tr class="text-left text-gray-600 border-b">
+                    
+                    <th class="px-4 py-2">Name</th>
+                    <th class="px-4 py-2">Roll</th>
+                    <th class="px-4 py-2">Branch</th>
+                    <th class="px-4 py-2">Year</th>
+                    <th class="px-4 py-2">Course</th>
+                    <th class="px-4 py-2">Email</th>
+                    <th class="px-4 py-2">Mobile</th>
+                    <th class="px-4 py-2">Role</th>
+                    <th class="px-4 py-2">Status</th>
+                    <th class="px-4 py-2">Login Time</th>
+                </tr>
+              </thead>
+              <tbody id="loginTableBody"></tbody>
+            </table>
+          </div>
+       </div>
+  <div id="noDataMsg" class="text-center text-gray-500 py-8 hidden">No logins found for selected filter or search.</div>
+    </div>
+  </div>
+<!-- Footer -->
+   <footer class="bg-gray-900 text-white py-12 mt-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="col-span-1 md:col-span-2">
+                <h3 class="text-2xl font-bold mb-4">SVUSTUDYNEST</h3>
+                <p class="text-gray-400">A platform for study resources for SVU students</p>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="/csedashboard.html" class="text-gray-400 hover:text-white">Home</a></li>
+                   
+                    <li><a href="/login.html" class="text-gray-400 hover:text-white">Login</a></li>
+                   
+                </ul>
+            </div>
+            <div class="grid grid-cols-2 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                        
+                    </ul>
+                </div>
+                <div>
+                    <h4 id="footer-contact" class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li><a href="mailto:support@healthvault.com" class="text-gray-400 hover:text-white">support@healthvault.com</a></li>
+                        <li><a href="mailto:info@healthvault.com" class="text-gray-400 hover:text-white">info@healthvault.com</a></li>
+                        <li><a href="mailto:help@healthvault.com" class="text-gray-400 hover:text-white">help@healthvault.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+            <p class="text-gray-400"> &copy; 2024 SVUSTUDYNEST. Sri Venkateswara University.</p>
+        </div>
+    </div>
+</footer>
+  <script>
+    let currentFilter = 'today';
+    let currentSearch = '';
+    async function fetchLogins() {
+      const params = new URLSearchParams();
+      params.set('filter', currentFilter);
+      if (currentSearch) params.set('search', currentSearch);
+      // Example endpoint: /api/admin/logins?filter=today&search=priya
+      const res = await fetch('/api/admin/logins?' + params.toString(), { credentials: 'include', cache: 'no-cache' });
+      if (!res.ok) return [];
+      const data = await res.json();
+      if (!data.success || !Array.isArray(data.logins)) return [];
+      return data.logins;
+    }
+
+    async function updateLogins() {
+      const logins = await fetchLogins();
+      renderTable(logins);
+    }
+
+    function filterLogins(type) {
+      currentFilter = type;
+      updateLogins();
+    }
+    function searchLogins() {
+      currentSearch = document.getElementById('searchBox').value.trim().toLowerCase();
+      updateLogins();
+    }
+
+    function renderTable(data) {
+      const tbody = document.getElementById('loginTableBody');
+      tbody.innerHTML = '';
+      if (!data || data.length === 0) {
+        document.getElementById('noDataMsg').classList.remove('hidden');
+        return;
+      }
+      document.getElementById('noDataMsg').classList.add('hidden');
+      data.forEach((l, i) => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            
+            <td class='px-4 py-2'>${l.name || '-'}</td>
+            <td class='px-4 py-2'>${l.roll || '-'}</td>
+            <td class='px-4 py-2'>${l.branch || '-'}</td>
+            <td class='px-4 py-2'>${l.year || '-'}</td>
+            <td class='px-4 py-2'>${l.course || '-'}</td>
+            <td class='px-4 py-2'>${l.email_id || '-'}</td>
+            <td class='px-4 py-2'>${l.mobileno || '-'}</td>
+            <td class='px-4 py-2'>${l.role || '-'}</td>
+            <td class='px-4 py-2'>${l.status || '-'}</td>
+            <td class='px-4 py-2'>${l.login_time ? new Date(l.login_time).toLocaleString() : '-'}</td>
+          `;
+          tbody.appendChild(tr);
+      });
+    }
+
+    document.getElementById('filterSelect').value = 'today';
+    updateLogins();
+  </script>
+</body>
+</html>

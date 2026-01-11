@@ -13,10 +13,15 @@ import json
 
 
 app = Flask(__name__)
-app.secret_key = 'your-secret-key-here-change-this-in-production'  # Change this in production
-app.config['SESSION_COOKIE_SECURE'] = False  # Set to True in production with HTTPS
+CORS(app, supports_credentials=True)
+
+# Configuration from environment (suitable for Render or other hosts)
+# SECRET_KEY should be set in the environment in production
+app.secret_key = os.environ.get('SECRET_KEY', 'change-this-in-production')
+# Session cookie security can be configured via env (use 'True' in prod with HTTPS)
+app.config['SESSION_COOKIE_SECURE'] = os.environ.get('SESSION_COOKIE_SECURE', 'False').lower() in ('1', 'true', 'yes')
 app.config['SESSION_COOKIE_HTTPONLY'] = True
-app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
+app.config['SESSION_COOKIE_SAMESITE'] = os.environ.get('SESSION_COOKIE_SAMESITE', 'Lax')
 CORS(app, supports_credentials=True)
 
 
@@ -24,7 +29,9 @@ CORS(app, supports_credentials=True)
 
 
 def get_db_connection():
-    conn = sqlite3.connect('students.db')
+    # Allow configuring the database path via env var (Render uses writable tmp dirs)
+    DB_PATH = os.environ.get('DATABASE_PATH', os.path.join(os.getcwd(), 'students.db'))
+    conn = sqlite3.connect(DB_PATH, check_same_thread=False)
     conn.row_factory = sqlite3.Row
     return conn
 
@@ -852,4 +859,7 @@ if __name__ == '__main__':
     except Exception:
         pass
     conn.close()
-    app.run(debug=True)
+    # For hosting platforms like Render, bind to 0.0.0.0 and read PORT from env
+    port = int(os.environ.get('PORT', 5000))
+    debug_mode = os.environ.get('FLASK_DEBUG', '0').lower() in ('1', 'true', 'yes')
+    app.run(host='0.0.0.0', port=port, debug=debug_mode)

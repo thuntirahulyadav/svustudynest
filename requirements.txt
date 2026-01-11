@@ -1,24 +1,7 @@
 Flask==2.3.3
 Flask-CORS==4.0.0
 requests==2.32.3
-pandas==2.1.1
-openpyxl==3.1.2
 Werkzeug==2.3.7
 gunicorn==21.2.0
-
-# Notes:
-# - SQLite is part of the Python stdlib; no package required.
-# - Add or pin other packages here as required by your app.
-# Core Flask web framework dependencies
-Flask==2.3.3
-Flask-CORS==4.0.0
-requests==2.32.3
-# Data processing and Excel export
-pandas==2.1.1
+pandas==2.1.4
 openpyxl==3.1.2
-
-# WSGI utilities (Flask dependency)
-Werkzeug==2.3.7
-
-# Note: SQLite3 is built into Python standard library - no installation needed
-# The project uses sqlite3 for database operations 
